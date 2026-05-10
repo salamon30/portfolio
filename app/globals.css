@@ -1,0 +1,118 @@
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --bg-subtle: #fafafa;
+    --fg: #0a0a0a;
+    --fg-muted: #6b7280;
+    --fg-faint: #9ca3af;
+    --border: #eaeaea;
+    --border-strong: #d4d4d4;
+    --accent: #378add;
+    --grid: rgba(10, 10, 10, 0.04);
+  }
+
+  .dark {
+    --bg: #0a0a0a;
+    --bg-subtle: #111111;
+    --fg: #f5f5f5;
+    --fg-muted: #a1a1aa;
+    --fg-faint: #6b7280;
+    --border: #1f1f1f;
+    --border-strong: #2a2a2a;
+    --accent: #4a9ae8;
+    --grid: rgba(255, 255, 255, 0.04);
+  }
+
+  html {
+    font-feature-settings: "cv11", "ss01", "ss03";
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  ::selection {
+    background: #378add33;
+    color: var(--fg);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5
+           text-sm font-medium transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: var(--accent);
+    color: #ffffff;
+    --tw-ring-color: color-mix(in srgb, var(--accent) 30%, transparent);
+    --tw-ring-offset-color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: color-mix(in srgb, var(--accent) 85%, black);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5
+           text-sm font-medium transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: var(--bg);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    --tw-ring-color: color-mix(in srgb, var(--accent) 20%, transparent);
+    --tw-ring-offset-color: var(--bg);
+  }
+  .btn-ghost:hover {
+    background: var(--bg-subtle);
+  }
+
+  .card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    @apply rounded-2xl shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+    background: var(--bg);
+    color: var(--fg-muted);
+    border: 1px solid var(--border);
+  }
+
+  .num {
+    @apply font-mono tabular-nums;
+  }
+
+  .text-muted { color: var(--fg-muted); }
+  .text-faint { color: var(--fg-faint); }
+  .bg-subtle { background: var(--bg-subtle); }
+  .border-default { border-color: var(--border); }
+
+  /* Subtle dotted grid background — Linear/Vercel style */
+  .bg-grid {
+    background-image:
+      radial-gradient(circle at 1px 1px, var(--grid) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="cc-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+    </pattern>
+    <radialGradient id="cc-glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="#080f12"/>
+  <rect width="1200" height="675" fill="url(#cc-grid)"/>
+  <rect width="1200" height="675" fill="url(#cc-glow)"/>
+
+  <!-- Header -->
+  <rect width="1200" height="52" fill="rgba(0,0,0,0.6)"/>
+  <text x="40" y="32" font-family="'Inter',Arial,sans-serif" font-size="18" font-weight="600" fill="white" letter-spacing="-0.3">Cool-Cooling — Simulation Output</text>
+  <text x="40" y="47" font-family="'Inter',Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.32)" letter-spacing="1">B.SC. GRADUATION THESIS  ·  KADIR HAS UNIVERSITY  ·  2025</text>
+
+  <!-- Plot area background -->
+  <rect x="80" y="80" width="860" height="520" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Y-axis label -->
+  <text transform="rotate(-90 28 340)" x="28" y="340" text-anchor="middle" font-family="'Courier New',monospace" font-size="12" fill="rgba(255,255,255,0.35)">Temperature (°C)</text>
+
+  <!-- X-axis label -->
+  <text x="510" y="626" text-anchor="middle" font-family="'Courier New',monospace" font-size="12" fill="rgba(255,255,255,0.35)">Time (s)</text>
+
+  <!-- Y axis ticks & grid lines -->
+  <line x1="80" y1="108" x2="940" y2="108" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="68" y="112" text-anchor="end" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">95</text>
+  <line x1="80" y1="204" x2="940" y2="204" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="68" y="208" text-anchor="end" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">75</text>
+  <line x1="80" y1="300" x2="940" y2="300" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="68" y="304" text-anchor="end" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">55</text>
+  <line x1="80" y1="396" x2="940" y2="396" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="68" y="400" text-anchor="end" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">35</text>
+  <line x1="80" y1="492" x2="940" y2="492" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="68" y="496" text-anchor="end" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">15</text>
+
+  <!-- X axis ticks -->
+  <text x="80"  y="612" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">0</text>
+  <text x="248" y="612" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">200</text>
+  <text x="416" y="612" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">400</text>
+  <text x="584" y="612" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">600</text>
+  <text x="752" y="612" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">800</text>
+  <text x="920" y="612" text-anchor="middle" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)">1000</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="600" x2="940" y2="600" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <line x1="80" y1="108" x2="80" y2="600" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+
+  <!-- Cooling curve area fill (exponential decay: T = 20 + 75*exp(-t/250)) -->
+  <path d="
+    M 80 108
+    C 130 118, 155 148, 185 190
+    C 220 240, 258 290, 310 348
+    C 360 400, 420 440, 490 468
+    C 560 492, 640 506, 720 514
+    C 790 520, 860 522, 940 524
+    L 940 600 L 80 600 Z
+  " fill="url(#area-fill)"/>
+
+  <!-- Cooling curve line -->
+  <path d="
+    M 80 108
+    C 130 118, 155 148, 185 190
+    C 220 240, 258 290, 310 348
+    C 360 400, 420 440, 490 468
+    C 560 492, 640 506, 720 514
+    C 790 520, 860 522, 940 524
+  " fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Steady state line (T_∞ = 20°C at y=588) -->
+  <line x1="80" y1="572" x2="940" y2="572" stroke="rgba(16,185,129,0.3)" stroke-width="1.5" stroke-dasharray="8 5"/>
+  <text x="948" y="576" font-family="'Courier New',monospace" font-size="10" fill="rgba(16,185,129,0.55)">T∞ = 20°C</text>
+
+  <!-- T0 annotation -->
+  <circle cx="80" cy="108" r="5" fill="#10b981"/>
+  <rect x="88" y="96" width="88" height="20" rx="3" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="132" y="110" text-anchor="middle" font-family="'Courier New',monospace" font-size="11" fill="#10b981">T₀ = 95°C</text>
+
+  <!-- Τau annotation at ~63% decay point (~x=248) -->
+  <circle cx="248" cy="370" r="4" fill="#f59e0b"/>
+  <line x1="248" y1="370" x2="248" y2="600" stroke="rgba(245,158,11,0.4)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="256" y="368" font-family="'Courier New',monospace" font-size="10" fill="#f59e0b">τ = 250 s</text>
+
+  <!-- Right panel — parameters -->
+  <rect x="972" y="80" width="192" height="260" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="988" y="104" font-family="'Inter',Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.38)" letter-spacing="1">PARAMETERS</text>
+  <line x1="988" y1="112" x2="1148" y2="112" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="988" y="132" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">T₀</text>
+  <text x="1148" y="132" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">95 °C</text>
+  <text x="988" y="154" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">T∞</text>
+  <text x="1148" y="154" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">20 °C</text>
+  <text x="988" y="176" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">τ</text>
+  <text x="1148" y="176" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">250 s</text>
+  <text x="988" y="198" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">h</text>
+  <text x="1148" y="198" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">45 W/m²K</text>
+  <text x="988" y="220" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">A</text>
+  <text x="1148" y="220" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">0.12 m²</text>
+  <text x="988" y="242" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">ρcp·V</text>
+  <text x="1148" y="242" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">540 J/K</text>
+  <text x="988" y="264" font-family="'Courier New',monospace" font-size="11" fill="rgba(255,255,255,0.5)">Δt</text>
+  <text x="1148" y="264" text-anchor="end" font-family="'Courier New',monospace" font-size="11" fill="#10b981">0.1 s</text>
+
+  <!-- Stack badges -->
+  <rect x="972" y="360" width="192" height="100" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="988" y="382" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="1">STACK</text>
+  <text x="988" y="400" font-family="'Courier New',monospace" font-size="11" fill="rgba(16,185,129,0.75)">Python · NumPy</text>
+  <text x="988" y="418" font-family="'Courier New',monospace" font-size="11" fill="rgba(16,185,129,0.75)">Matplotlib</text>
+  <text x="988" y="436" font-family="'Courier New',monospace" font-size="11" fill="rgba(16,185,129,0.75)">Simulation</text>
+  <text x="988" y="452" font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.22)">Kadir Has · 2025</text>
+</svg>

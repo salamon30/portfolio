@@ -168,7 +168,7 @@ const en: Dict = {
     title1: "Data, AI and",
     title2: "intelligent sensor systems.",
     description:
-      "Computer engineer completing an M.Eng. in AI for Smart Sensors and Actuators at THD Deggendorf, Germany. Internship experience at Vodafone Türkiye and KPMG; B.Sc. in Computer Engineering from Kadir Has University on a full scholarship. Outside the lab: active tennis player at 1. FC Nürnberg and coach at the University of Regensburg and FAU Erlangen-Nürnberg.",
+      "M.Eng. candidate in AI for Smart Sensors and Actuators at THD Deggendorf, Germany (GPA 1.0). Data analytics experience at Vodafone Türkiye and KPMG; B.Sc. Computer Engineering on a full scholarship from Kadir Has University. Competitive tennis player at 1. FC Nürnberg — coach to university students at Regensburg and FAU Erlangen-Nürnberg.",
     ctaPrimary: "Read my background",
     ctaSecondary: "Get in touch",
     ctaCv: "Download CV",
@@ -177,11 +177,11 @@ const en: Dict = {
     years: "3+",
     yearsLabel: "Years in data and analytics",
     projects: "2",
-    projectsLabel: "Degrees (B.Sc. + M.Sc. in progress)",
+    projectsLabel: "Degrees (B.Sc. + M.Eng. in progress)",
     countries: "12",
     countriesLabel: "Countries visited",
     languages: "4",
-    languagesLabel: "Languages spoken",
+    languagesLabel: "Languages — TR & EN fluent, DE & FR learning",
   },
   stack: { title: "Tools I work with" },
   selectedWork: {
@@ -358,15 +358,15 @@ const en: Dict = {
     groups: [
       {
         title: "Programming",
-        items: ["Python", "C++", "SQL", "MATLAB"],
+        items: ["Python", "C++", "SQL", "TypeScript", "MATLAB"],
       },
       {
         title: "Data & BI",
-        items: ["Tableau", "Power BI", "DBeaver", "Data quality assessment"],
+        items: ["Tableau", "Power BI", "DBeaver", "pandas", "NumPy"],
       },
       {
-        title: "AI & Systems",
-        items: ["Edge AI", "IoT systems", "Smart sensors", "Embedded systems"],
+        title: "AI & ML",
+        items: ["YOLOv8", "scikit-learn", "PyTorch", "Edge AI", "Smart sensors"],
       },
       {
         title: "Ways of working",
@@ -472,7 +472,7 @@ const tr: Dict = {
     title1: "Veri, yapay zekâ ve",
     title2: "akıllı sensör sistemleri.",
     description:
-      "THD Deggendorf, Almanya'da Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansını tamamlayan bilgisayar mühendisi. Vodafone Türkiye ve KPMG'de staj deneyimi; Kadir Has Üniversitesi'nde tam burslu Bilgisayar Mühendisliği lisansı. Laboratuvarın dışında: 1. FC Nürnberg'de aktif tenis oyuncusu ve Regensburg Üniversitesi ile FAU Erlangen-Nürnberg'de antrenör.",
+      "THD Deggendorf, Almanya'da Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisans adayı (GPA 1.0). Vodafone Türkiye ve KPMG'de veri analitiği deneyimi; Kadir Has Üniversitesi'nde tam burslu Bilgisayar Mühendisliği lisansı. 1. FC Nürnberg'de rekabetçi tenis — Regensburg Üniversitesi ve FAU Erlangen-Nürnberg'de öğrencilere antrenörlük.",
     ctaPrimary: "Geçmişimi incele",
     ctaSecondary: "İletişime geç",
     ctaCv: "CV'yi indir",
@@ -485,7 +485,7 @@ const tr: Dict = {
     countries: "12",
     countriesLabel: "Gezilen ülke",
     languages: "4",
-    languagesLabel: "Konuşulan dil",
+    languagesLabel: "Dil — TR & EN akıcı, DE & FR öğreniyor",
   },
   stack: { title: "Kullandığım araçlar" },
   selectedWork: {
@@ -662,15 +662,15 @@ const tr: Dict = {
     groups: [
       {
         title: "Programlama",
-        items: ["Python", "C++", "SQL", "MATLAB"],
+        items: ["Python", "C++", "SQL", "TypeScript", "MATLAB"],
       },
       {
         title: "Veri & İş Zekâsı",
-        items: ["Tableau", "Power BI", "DBeaver", "Veri kalitesi değerlendirmesi"],
+        items: ["Tableau", "Power BI", "DBeaver", "pandas", "NumPy"],
       },
       {
-        title: "YZ & Sistemler",
-        items: ["Edge AI", "IoT sistemleri", "Akıllı sensörler", "Gömülü sistemler"],
+        title: "YZ & Makine Öğrenmesi",
+        items: ["YOLOv8", "scikit-learn", "PyTorch", "Edge AI", "Akıllı sensörler"],
       },
       {
         title: "Çalışma biçimi",
@@ -776,7 +776,7 @@ const de: Dict = {
     title1: "Daten, KI und",
     title2: "intelligente Sensorsysteme.",
     description:
-      "Informatiker im M.Eng.-Studium KI für intelligente Sensoren und Aktoren an der THD Deggendorf. Praktikumserfahrung bei Vodafone Türkei und KPMG; B.Sc. in Informatik (Vollstipendium) an der Kadir-Has-Universität. Neben dem Studium: aktiver Tennisspieler beim 1. FC Nürnberg und Trainer an der Universität Regensburg und der FAU Erlangen-Nürnberg.",
+      "M.Eng.-Kandidat in KI für intelligente Sensoren und Aktoren an der THD Deggendorf (Note 1,0). Praxiserfahrung in Datenanalytik bei Vodafone Türkei und KPMG; B.Sc. Informatik mit Vollstipendium an der Kadir-Has-Universität. Wettkampftennis beim 1. FC Nürnberg — Trainer für Studierende an der Universität Regensburg und der FAU Erlangen-Nürnberg.",
     ctaPrimary: "Werdegang ansehen",
     ctaSecondary: "Kontakt aufnehmen",
     ctaCv: "Lebenslauf herunterladen",
@@ -785,11 +785,11 @@ const de: Dict = {
     years: "3+",
     yearsLabel: "Jahre in Daten und Analytics",
     projects: "2",
-    projectsLabel: "Abschlüsse (B.Sc. + M.Sc. laufend)",
+    projectsLabel: "Abschlüsse (B.Sc. + M.Eng. laufend)",
     countries: "12",
     countriesLabel: "Bereiste Länder",
     languages: "4",
-    languagesLabel: "Gesprochene Sprachen",
+    languagesLabel: "Sprachen — TR & EN fließend, DE & FR in Lernphase",
   },
   stack: { title: "Meine Werkzeuge" },
   selectedWork: {
@@ -966,15 +966,15 @@ const de: Dict = {
     groups: [
       {
         title: "Programmierung",
-        items: ["Python", "C++", "SQL", "MATLAB"],
+        items: ["Python", "C++", "SQL", "TypeScript", "MATLAB"],
       },
       {
         title: "Daten & BI",
-        items: ["Tableau", "Power BI", "DBeaver", "Datenqualitätsbewertung"],
+        items: ["Tableau", "Power BI", "DBeaver", "pandas", "NumPy"],
       },
       {
-        title: "KI & Systeme",
-        items: ["Edge AI", "IoT-Systeme", "Intelligente Sensoren", "Embedded Systems"],
+        title: "KI & Machine Learning",
+        items: ["YOLOv8", "scikit-learn", "PyTorch", "Edge AI", "Intelligente Sensoren"],
       },
       {
         title: "Arbeitsweise",

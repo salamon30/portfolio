@@ -164,11 +164,11 @@ const en: Dict = {
     search: "Search",
   },
   hero: {
-    status: "Munich · Open to internships and junior positions",
+    status: "Munich · Open to internships and working student roles",
     title1: "Data, AI and",
     title2: "intelligent sensor systems.",
     description:
-      "M.Eng. candidate in AI for Smart Sensors and Actuators at THD Deggendorf, Germany (GPA 1.0). Data analytics experience at Vodafone Türkiye and KPMG; B.Sc. Computer Engineering on a full scholarship from Kadir Has University. Competitive tennis player at 1. FC Nürnberg — coach to university students at Regensburg and FAU Erlangen-Nürnberg.",
+      "Pursuing an M.Eng. in AI for Smart Sensors and Actuators at THD Deggendorf, Germany (GPA 1.0). Previously a data analytics intern at Vodafone Türkiye and KPMG; B.Sc. Computer Engineering on a full scholarship from Kadir Has University. Turkish Junior Tennis Champion — now competing at 1. FC Nürnberg and coaching at the University of Regensburg and FAU Erlangen-Nürnberg.",
     ctaPrimary: "Read my background",
     ctaSecondary: "Get in touch",
     ctaCv: "Download CV",
@@ -424,7 +424,7 @@ const en: Dict = {
     kicker: "Contact",
     title: "Get in touch.",
     description:
-      "Open to full-time roles, internships and research collaborations. I usually reply within a working day.",
+      "Open to internships, working student roles and research collaborations. I usually reply within a working day.",
     leftHeading: "Direct channels",
     leftBody:
       "Reach me on any of the channels below. For project enquiries, the form on the right is the most reliable route.",
@@ -468,11 +468,11 @@ const tr: Dict = {
     search: "Ara",
   },
   hero: {
-    status: "Münih · Staj ve junior pozisyonlara açığım",
+    status: "Münih · Staj ve çalışan öğrenci pozisyonlarına açığım",
     title1: "Veri, yapay zekâ ve",
     title2: "akıllı sensör sistemleri.",
     description:
-      "THD Deggendorf, Almanya'da Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisans adayı (GPA 1.0). Vodafone Türkiye ve KPMG'de veri analitiği deneyimi; Kadir Has Üniversitesi'nde tam burslu Bilgisayar Mühendisliği lisansı. 1. FC Nürnberg'de rekabetçi tenis — Regensburg Üniversitesi ve FAU Erlangen-Nürnberg'de öğrencilere antrenörlük.",
+      "Almanya'da THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı yapıyorum (GPA 1.0). Daha önce Vodafone Türkiye ve KPMG'de veri analitiği stajyeri olarak çalıştım; Kadir Has Üniversitesi'nde tam burslu Bilgisayar Mühendisliği mezunuyum. Türkiye Junior Tenis Şampiyonu — şu an 1. FC Nürnberg'de oynuyor, Regensburg ve FAU Erlangen-Nürnberg'de tenis antrenörlüğü yapıyorum.",
     ctaPrimary: "Geçmişimi incele",
     ctaSecondary: "İletişime geç",
     ctaCv: "CV'yi indir",
@@ -728,7 +728,7 @@ const tr: Dict = {
     kicker: "İletişim",
     title: "İletişime geç.",
     description:
-      "Tam zamanlı pozisyonlar, stajlar ve araştırma iş birliklerine açığım. Genellikle bir iş günü içinde yanıt veririm.",
+      "Stajlar, çalışan öğrenci pozisyonları ve araştırma iş birliklerine açığım. Genellikle bir iş günü içinde yanıt veririm.",
     leftHeading: "Doğrudan kanallar",
     leftBody:
       "Aşağıdaki kanalların herhangi birinden bana ulaşabilirsiniz. Proje talepleri için sağdaki form en güvenilir yoldur.",
@@ -772,11 +772,11 @@ const de: Dict = {
     search: "Suchen",
   },
   hero: {
-    status: "München · Offen für Praktika und Junior-Positionen",
+    status: "München · Offen für Praktika und Werkstudentenstellen",
     title1: "Daten, KI und",
     title2: "intelligente Sensorsysteme.",
     description:
-      "M.Eng.-Kandidat in KI für intelligente Sensoren und Aktoren an der THD Deggendorf (Note 1,0). Praxiserfahrung in Datenanalytik bei Vodafone Türkei und KPMG; B.Sc. Informatik mit Vollstipendium an der Kadir-Has-Universität. Wettkampftennis beim 1. FC Nürnberg — Trainer für Studierende an der Universität Regensburg und der FAU Erlangen-Nürnberg.",
+      "M.Eng.-Studium in KI für intelligente Sensoren und Aktoren an der THD Deggendorf, Deutschland (Note 1,0). Zuvor Praktika in Datenanalytik bei Vodafone Türkei und KPMG; B.Sc. Informatik mit Vollstipendium an der Kadir-Has-Universität. Türkischer Junioren-Tennismeister — heute aktiver Spieler beim 1. FC Nürnberg und Trainer an der Universität Regensburg und der FAU Erlangen-Nürnberg.",
     ctaPrimary: "Werdegang ansehen",
     ctaSecondary: "Kontakt aufnehmen",
     ctaCv: "Lebenslauf herunterladen",
@@ -1032,7 +1032,7 @@ const de: Dict = {
     kicker: "Kontakt",
     title: "Kontakt aufnehmen.",
     description:
-      "Offen für Festanstellungen, Praktika und Forschungskooperationen. Ich antworte in der Regel innerhalb eines Werktags.",
+      "Offen für Praktika, Werkstudentenstellen und Forschungskooperationen. Ich antworte in der Regel innerhalb eines Werktags.",
     leftHeading: "Direkte Kanäle",
     leftBody:
       "Sie erreichen mich über einen der unten stehenden Kanäle. Für Projektanfragen ist das Formular rechts der zuverlässigste Weg.",

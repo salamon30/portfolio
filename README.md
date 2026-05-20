@@ -10,7 +10,7 @@ Personal portfolio for **Recep Uzun** — AI Master's student at THD Deggendorf,
 
 [![Live Site](https://img.shields.io/badge/Live_Site-portfolio--recepuzun.vercel.app-000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/)
 
-[![Preview](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/opengraph-image)](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/)
+[![Preview](https://raw.githubusercontent.com/salamon30/portfolio/main/public/preview.png)](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/)
 
 ---
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useT } from "@/lib/i18n";
 import { PROFILE_AVATAR, TENNIS_PHOTOS } from "@/lib/media";
+import NeuralNetworkBg from "@/components/NeuralNetworkBg";
 
 const container = {
   hidden: { opacity: 0 },
@@ -170,6 +171,11 @@ function BackgroundDecoration() {
             "radial-gradient(closest-side, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%)",
         }}
       />
+      {/* neural network animation */}
+      <div className="absolute inset-0 opacity-[0.35] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,black_40%,transparent_100%)]">
+        <NeuralNetworkBg />
+      </div>
+
       {/* blob 3 — warm right */}
       <motion.div
         initial={{ x: 40, opacity: 0 }}

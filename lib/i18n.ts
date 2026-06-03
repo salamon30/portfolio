@@ -164,11 +164,11 @@ const en: Dict = {
     search: "Search",
   },
   hero: {
-    status: "Munich · Open to internships and working student roles",
-    title1: "Data, AI and",
-    title2: "intelligent sensor systems.",
+    status: "Bavaria · Seeking Werkstudent position — available immediately",
+    title1: "Turning sensor data",
+    title2: "into intelligent decisions.",
     description:
-      "Pursuing an M.Eng. in AI for Smart Sensors and Actuators at THD Deggendorf, Germany (GPA 1.0). Previously a data analytics intern at Vodafone Türkiye and KPMG; B.Sc. Computer Engineering on a full scholarship from Kadir Has University. Turkish Junior Tennis Champion — now competing at 1. FC Nürnberg and coaching at the University of Regensburg and FAU Erlangen-Nürnberg.",
+      "M.Eng. in AI for Smart Sensors & Actuators at THD Deggendorf (GPA 1.0). Computer vision, edge AI, and sensor systems — from research to working prototypes. Previously at Vodafone Türkiye and KPMG.",
     ctaPrimary: "Read my background",
     ctaSecondary: "Get in touch",
     ctaCv: "Download CV",
@@ -468,11 +468,11 @@ const tr: Dict = {
     search: "Ara",
   },
   hero: {
-    status: "Münih · Staj ve çalışan öğrenci pozisyonlarına açığım",
-    title1: "Veri, yapay zekâ ve",
-    title2: "akıllı sensör sistemleri.",
+    status: "Bavyera · Werkstudent pozisyonu arıyorum — hemen başlayabilirim",
+    title1: "Sensör verisini",
+    title2: "akıllı kararlara dönüştürmek.",
     description:
-      "Almanya'da THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı yapıyorum (GPA 1.0). Daha önce Vodafone Türkiye ve KPMG'de veri analitiği stajyeri olarak çalıştım; Kadir Has Üniversitesi'nde tam burslu Bilgisayar Mühendisliği mezunuyum. Türkiye Junior Tenis Şampiyonu — şu an 1. FC Nürnberg'de oynuyor, Regensburg ve FAU Erlangen-Nürnberg'de tenis antrenörlüğü yapıyorum.",
+      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı (GPA 1.0). Bilgisayar görüsü, edge AI ve sensör sistemleri — araştırmadan çalışan prototiplere. Daha önce Vodafone Türkiye ve KPMG'de çalıştım.",
     ctaPrimary: "Geçmişimi incele",
     ctaSecondary: "İletişime geç",
     ctaCv: "CV'yi indir",
@@ -772,11 +772,11 @@ const de: Dict = {
     search: "Suchen",
   },
   hero: {
-    status: "München · Offen für Praktika und Werkstudentenstellen",
-    title1: "Daten, KI und",
-    title2: "intelligente Sensorsysteme.",
+    status: "Bayern · Suche Werkstudentenstelle — sofort verfügbar",
+    title1: "Sensordaten in",
+    title2: "intelligente Entscheidungen.",
     description:
-      "M.Eng.-Studium in KI für intelligente Sensoren und Aktoren an der THD Deggendorf, Deutschland (Note 1,0). Zuvor Praktika in Datenanalytik bei Vodafone Türkei und KPMG; B.Sc. Informatik mit Vollstipendium an der Kadir-Has-Universität. Türkischer Junioren-Tennismeister — heute aktiver Spieler beim 1. FC Nürnberg und Trainer an der Universität Regensburg und der FAU Erlangen-Nürnberg.",
+      "M.Eng. in KI für intelligente Sensoren & Aktoren an der THD Deggendorf (Note 1,0). Computer Vision, Edge AI und Sensorsysteme — von der Forschung zum funktionierenden Prototyp. Zuvor bei Vodafone Türkei und KPMG.",
     ctaPrimary: "Werdegang ansehen",
     ctaSecondary: "Kontakt aufnehmen",
     ctaCv: "Lebenslauf herunterladen",

@@ -106,6 +106,7 @@ export function NavBar() {
               href="/cv/CV_Uzun.pdf"
               target="_blank"
               rel="noreferrer"
+              prefetch={false}
               className="hidden h-9 items-center gap-1.5 rounded-full border border-default bg-[var(--bg)] px-3 text-xs font-medium text-[var(--fg-muted)] transition-colors hover:text-[var(--fg)] lg:inline-flex"
               aria-label={t.nav.cv}
             >
@@ -172,6 +173,7 @@ export function NavBar() {
                   href="/cv/CV_Uzun.pdf"
                   target="_blank"
                   rel="noreferrer"
+                  prefetch={false}
                   onClick={() => setOpen(false)}
                   className="mt-2 flex items-center gap-2 rounded-xl border border-default px-4 py-3 text-sm font-medium text-[var(--fg-muted)] transition-colors hover:text-[var(--fg)]"
                 >

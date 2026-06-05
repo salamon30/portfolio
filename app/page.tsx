@@ -124,6 +124,7 @@ function Hero() {
               href="/cv/CV_Uzun.pdf"
               target="_blank"
               rel="noreferrer"
+              prefetch={false}
               className="btn-ghost"
             >
               {t.hero.ctaCv}
@@ -525,6 +526,7 @@ function Footer() {
             href="/cv/CV_Uzun.pdf"
             target="_blank"
             rel="noreferrer"
+            prefetch={false}
             className="hover:text-[var(--fg)]"
           >
             {t.nav.cv}

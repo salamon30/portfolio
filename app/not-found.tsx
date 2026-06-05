@@ -112,6 +112,7 @@ function QuickLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
+      prefetch={external ? false : undefined}
       className="group flex items-center justify-between rounded-xl border border-default bg-[var(--bg)] px-4 py-3 text-sm text-[var(--fg-muted)] transition-colors hover:border-[var(--fg)]/30 hover:text-[var(--fg)]"
     >
       {label}

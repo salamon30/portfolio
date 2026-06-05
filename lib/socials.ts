@@ -4,7 +4,7 @@
  */
 
 export const SOCIALS = {
-  email: "recepulas.uzun@gmail.com",
+  email: "ulasch_uzun@hotmail.com",
   linkedin: "https://www.linkedin.com/in/recep-ulas-uzun/",
   github: "https://github.com/salamon30",
   instagram: "https://www.instagram.com/ulas__uzun/",
@@ -15,7 +15,7 @@ export type SocialKey = keyof typeof SOCIALS;
 
 /** Pretty display value for a given social key. */
 export const SOCIAL_DISPLAY: Record<SocialKey, string> = {
-  email: "recepulas.uzun@gmail.com",
+  email: "ulasch_uzun@hotmail.com",
   linkedin: "linkedin.com/in/recep-ulas-uzun",
   github: "github.com/salamon30",
   instagram: "@ulas__uzun",

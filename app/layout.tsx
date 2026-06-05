@@ -91,6 +91,38 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Recep Ulaş Uzun",
+              url: SITE_URL,
+              image: `${SITE_URL}/me/avatar.png`,
+              jobTitle: "M.Eng. Student — AI for Smart Sensors & Actuators",
+              description:
+                "Computer engineer pursuing a Master's in AI for Smart Sensors and Actuators at THD Deggendorf. Background in applied analytics at Vodafone Türkiye and KPMG.",
+              worksFor: {
+                "@type": "CollegeOrUniversity",
+                name: "Technische Hochschule Deggendorf",
+              },
+              alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "Kadir Has University",
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Munich",
+                addressCountry: "DE",
+              },
+              sameAs: [
+                "https://www.linkedin.com/in/recep-ulas-uzun/",
+                "https://github.com/salamon30",
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="min-h-screen antialiased">
         <LanguageProvider>

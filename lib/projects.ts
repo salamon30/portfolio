@@ -315,5 +315,6 @@ export const PROJECTS: Project[] = [
       tr: "Sıfırdan geliştirdim",
       de: "Von Grund auf entwickelt",
     },
+    links: { github: "https://github.com/salamon30/portfolio" },
   },
 ];

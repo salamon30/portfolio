@@ -293,8 +293,13 @@ function SelectedWork() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="card group flex flex-col p-6 transition-shadow hover:shadow-cardHover"
+            className="card group relative flex flex-col p-6 transition-shadow hover:shadow-cardHover cursor-pointer"
           >
+            <Link
+              href="/projects"
+              className="absolute inset-0 z-[1] rounded-[inherit]"
+              aria-label={p.title}
+            />
             <span className="text-[11px] uppercase tracking-[0.16em] text-faint">
               {p.kicker}
             </span>

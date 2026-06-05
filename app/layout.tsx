@@ -41,12 +41,21 @@ export const metadata: Metadata = {
     title: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
     description:
       "Computer engineer · Master's in AI for Smart Sensors and Actuators at THD Deggendorf · Applied analytics at Vodafone Türkiye and KPMG.",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
     description:
       "Computer engineer · Master's in AI for Smart Sensors and Actuators at THD Deggendorf · Applied analytics at Vodafone Türkiye and KPMG.",
+    images: ["/preview.png"],
   },
   robots: {
     index: true,

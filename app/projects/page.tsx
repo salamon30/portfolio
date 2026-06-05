@@ -127,8 +127,10 @@ function ProjectCard({
     research: t.projects.filterResearch,
   }[project.category];
 
+  const githubUrl = project.links?.github;
+
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-default bg-[var(--bg)] shadow-card transition-shadow hover:shadow-cardHover">
+    <article className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-default bg-[var(--bg)] shadow-card transition-shadow hover:shadow-cardHover${githubUrl ? " cursor-pointer" : ""}`}>
       {/* top accent rail */}
       <span
         aria-hidden
@@ -136,10 +138,21 @@ function ProjectCard({
         style={{ background: color, opacity: 0.8 }}
       />
 
+      {/* stretched link — makes the whole card clickable */}
+      {githubUrl && (
+        <Link
+          href={githubUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="absolute inset-0 z-[1]"
+          aria-label={project.titles[locale]}
+        />
+      )}
+
       {/* cover */}
       <CoverArea project={project} color={color} />
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="relative z-[2] flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-faint">
           <span
             className="inline-block h-1.5 w-1.5 rounded-full"
@@ -186,13 +199,8 @@ function ProjectCard({
           </ul>
         )}
 
-        {project.links && (
+        {project.links && (project.links.demo || project.links.paper) && (
           <div className="mt-5 flex flex-wrap gap-2 border-t border-default pt-4">
-            {project.links.github && (
-              <ProjectLink href={project.links.github} icon="code">
-                {t.projects.linkGithub}
-              </ProjectLink>
-            )}
             {project.links.demo && (
               <ProjectLink href={project.links.demo} icon="external">
                 {t.projects.linkDemo}

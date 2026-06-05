@@ -317,6 +317,18 @@ function SelectedWork() {
           </motion.article>
         ))}
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-10 flex justify-center"
+      >
+        <Link href="/projects" className="btn-ghost">
+          {t.selectedWork.allProjects} →
+        </Link>
+      </motion.div>
     </section>
   );
 }

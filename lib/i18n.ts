@@ -57,6 +57,7 @@ type Dict = {
     kicker: string;
     title: string;
     all: string;
+    allProjects: string;
     items: { kicker: string; title: string; summary: string; metric: string }[];
   };
   journey: {
@@ -188,6 +189,7 @@ const en: Dict = {
     kicker: "Selected experience",
     title: "Recent professional work.",
     all: "View full timeline",
+    allProjects: "View all projects",
     items: [
       {
         kicker: "Vodafone Türkiye",
@@ -492,6 +494,7 @@ const tr: Dict = {
     kicker: "Seçilmiş deneyim",
     title: "Yakın dönem profesyonel çalışmalar.",
     all: "Tüm zaman çizelgesi",
+    allProjects: "Tüm projeleri gör",
     items: [
       {
         kicker: "Vodafone Türkiye",
@@ -796,6 +799,7 @@ const de: Dict = {
     kicker: "Ausgewählte Erfahrung",
     title: "Aktuelle berufliche Stationen.",
     all: "Vollständigen Werdegang",
+    allProjects: "Alle Projekte ansehen",
     items: [
       {
         kicker: "Vodafone Türkei",

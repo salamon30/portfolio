@@ -89,6 +89,8 @@ export function CommandMenu() {
       { id: "travel", label: t.nav.travel, href: "/travel" },
       { id: "think", label: t.nav.think, href: "/think" },
       { id: "contact", label: t.nav.contact, href: "/contact" },
+      { id: "writing", label: t.nav.writing, href: "/writing" },
+      { id: "now", label: t.nav.now, href: "/now" },
     ].map<CmdItem>((p) => ({
       id: `page-${p.id}`,
       label: p.label,

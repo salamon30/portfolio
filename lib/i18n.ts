@@ -30,7 +30,7 @@ export const LOCALE_FULL_LABELS: Record<Locale, string> = {
 
 type Dict = {
   nav: Record<
-    "home" | "journey" | "projects" | "travel" | "think" | "contact" | "cv" | "search",
+    "home" | "journey" | "projects" | "travel" | "think" | "contact" | "cv" | "search" | "writing" | "now",
     string
   >;
   hero: {
@@ -163,6 +163,8 @@ const en: Dict = {
     contact: "Contact",
     cv: "CV",
     search: "Search",
+    writing: "Writing",
+    now: "Now",
   },
   hero: {
     status: "Bavaria · Seeking Werkstudent position — available immediately",
@@ -468,6 +470,8 @@ const tr: Dict = {
     contact: "İletişim",
     cv: "CV",
     search: "Ara",
+    writing: "Yazılar",
+    now: "Şu An",
   },
   hero: {
     status: "Bavyera · Werkstudent pozisyonu arıyorum — hemen başlayabilirim",
@@ -773,6 +777,8 @@ const de: Dict = {
     contact: "Kontakt",
     cv: "Lebenslauf",
     search: "Suchen",
+    writing: "Schreiben",
+    now: "Jetzt",
   },
   hero: {
     status: "Bayern · Suche Werkstudentenstelle — sofort verfügbar",

@@ -115,4 +115,15 @@
       radial-gradient(circle at 1px 1px, var(--grid) 1px, transparent 0);
     background-size: 24px 24px;
   }
+
+  /* Blog post prose */
+  .prose-custom p   { @apply text-base leading-relaxed text-muted mb-5; }
+  .prose-custom h2  { @apply text-xl font-semibold tracking-tight text-[var(--fg)] mt-10 mb-4; }
+  .prose-custom h3  { @apply text-lg font-semibold tracking-tight text-[var(--fg)] mt-8 mb-3; }
+  .prose-custom ul  { @apply list-disc pl-5 mb-5 space-y-1.5 text-muted; }
+  .prose-custom li  { @apply text-base leading-relaxed; }
+  .prose-custom pre { @apply rounded-xl border border-default bg-subtle p-4 overflow-x-auto mb-5; }
+  .prose-custom code { @apply font-mono text-sm text-[var(--fg)]; }
+  .prose-custom a   { @apply text-[var(--accent)] underline underline-offset-2 hover:opacity-80; }
+  .prose-custom strong { @apply font-semibold text-[var(--fg)]; }
 }

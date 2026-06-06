@@ -531,6 +531,12 @@ function Footer() {
           >
             {t.nav.cv}
           </Link>
+          <Link href="/writing" className="hover:text-[var(--fg)]">
+            {t.nav.writing}
+          </Link>
+          <Link href="/now" className="hover:text-[var(--fg)]">
+            {t.nav.now}
+          </Link>
           <span className="text-faint">München</span>
         </div>
       </div>

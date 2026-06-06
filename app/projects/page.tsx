@@ -130,7 +130,7 @@ function ProjectCard({
   const githubUrl = project.links?.github;
 
   return (
-    <article className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-default bg-[var(--bg)] shadow-card transition-shadow hover:shadow-cardHover${githubUrl ? " cursor-pointer" : ""}`}>
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-default bg-[var(--bg)] shadow-card transition-shadow hover:shadow-cardHover cursor-pointer">
       {/* top accent rail */}
       <span
         aria-hidden
@@ -138,28 +138,22 @@ function ProjectCard({
         style={{ background: color, opacity: 0.8 }}
       />
 
-      {/* stretched link — makes the whole card clickable */}
-      {githubUrl && (
-        <Link
-          href={githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="absolute inset-0 z-[1]"
-          aria-label={project.titles[locale]}
-        />
-      )}
+      {/* stretched link — navigates to detail page */}
+      <Link
+        href={`/projects/${project.slug}`}
+        className="absolute inset-0 z-[1]"
+        aria-label={project.titles[locale]}
+      />
 
       {/* cover */}
       <div className="relative">
         <CoverArea project={project} color={color} />
-        {githubUrl && (
-          <span
-            aria-hidden
-            className="absolute bottom-3 right-3 z-[2] flex items-center gap-1 rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0"
-          >
-            GitHub →
-          </span>
-        )}
+        <span
+          aria-hidden
+          className="absolute bottom-3 right-3 z-[2] flex items-center gap-1 rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0"
+        >
+          View →
+        </span>
       </div>
 
       <div className="relative z-[2] flex flex-1 flex-col p-6">

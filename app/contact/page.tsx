@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useT } from "@/lib/i18n";
@@ -132,6 +132,17 @@ function SocialRow({
   display: string;
   delay: number;
 }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(SOCIALS.email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, []);
+
   return (
     <motion.li
       initial={{ opacity: 0, y: 8 }}
@@ -151,8 +162,19 @@ function SocialRow({
           <span className="text-sm font-medium text-[var(--fg)]">{label}</span>
           <span className="truncate text-xs text-faint">{display}</span>
         </span>
-        <span className="ml-auto text-[var(--fg-muted)] opacity-0 transition-opacity group-hover:opacity-100">
-          <ArrowUpRight />
+        <span className="ml-auto flex items-center gap-2">
+          {kind === "email" && (
+            <button
+              onClick={handleCopy}
+              className="relative z-10 rounded-md border border-default p-1.5 text-[var(--fg-muted)] opacity-0 transition-all hover:border-[var(--fg)]/30 hover:text-[var(--fg)] group-hover:opacity-100"
+              aria-label="Copy email address"
+            >
+              {copied ? <CheckIcon /> : <CopyIcon />}
+            </button>
+          )}
+          <span className="text-[var(--fg-muted)] opacity-0 transition-opacity group-hover:opacity-100">
+            <ArrowUpRight />
+          </span>
         </span>
       </Link>
     </motion.li>
@@ -433,6 +455,15 @@ function ArrowUpRight() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+function CopyIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="9" y="9" width="13" height="13" rx="2" />
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
     </svg>
   );
 }

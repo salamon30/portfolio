@@ -150,7 +150,17 @@ function ProjectCard({
       )}
 
       {/* cover */}
-      <CoverArea project={project} color={color} />
+      <div className="relative">
+        <CoverArea project={project} color={color} />
+        {githubUrl && (
+          <span
+            aria-hidden
+            className="absolute bottom-3 right-3 z-[2] flex items-center gap-1 rounded-full border border-white/20 bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white/90 backdrop-blur-sm opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0"
+          >
+            GitHub →
+          </span>
+        )}
+      </div>
 
       <div className="relative z-[2] flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-faint">

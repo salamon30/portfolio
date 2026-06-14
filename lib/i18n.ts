@@ -171,7 +171,7 @@ const en: Dict = {
     title1: "Turning sensor data",
     title2: "into intelligent decisions.",
     description:
-      "M.Eng. in AI for Smart Sensors & Actuators at THD Deggendorf (GPA 1.0). Computer vision, edge AI, and sensor systems — from research to working prototypes. Previously at Vodafone Türkiye and KPMG.",
+      "M.Eng. in AI for Smart Sensors & Actuators at THD Deggendorf. Computer vision, edge AI, and sensor systems — from research to working prototypes. Previously at Vodafone Türkiye and KPMG.",
     ctaPrimary: "Read my background",
     ctaSecondary: "Get in touch",
     ctaCv: "Download CV",
@@ -233,7 +233,7 @@ const en: Dict = {
         period: "2025 — Present",
         title: "M.Eng. Artificial Intelligence for Smart Sensors & Actuators",
         org: "Technische Hochschule Deggendorf",
-        location: "Germany · Grade 1.0",
+        location: "Germany",
         summary:
           "Application-oriented Master's programme focused on intelligent sensor systems. Core areas: AI, machine learning, embedded control, system design, big data and IoT communication. Fully English, R&D-oriented.",
       },
@@ -478,7 +478,7 @@ const tr: Dict = {
     title1: "Sensör verisini",
     title2: "akıllı kararlara dönüştürmek.",
     description:
-      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı (GPA 1.0). Bilgisayar görüsü, edge AI ve sensör sistemleri — araştırmadan çalışan prototiplere. Daha önce Vodafone Türkiye ve KPMG'de çalıştım.",
+      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı. Bilgisayar görüsü, edge AI ve sensör sistemleri — araştırmadan çalışan prototiplere. Daha önce Vodafone Türkiye ve KPMG'de çalıştım.",
     ctaPrimary: "Geçmişimi incele",
     ctaSecondary: "İletişime geç",
     ctaCv: "CV'yi indir",
@@ -785,7 +785,7 @@ const de: Dict = {
     title1: "Sensordaten in",
     title2: "intelligente Entscheidungen.",
     description:
-      "M.Eng. in KI für intelligente Sensoren & Aktoren an der THD Deggendorf (Note 1,0). Computer Vision, Edge AI und Sensorsysteme — von der Forschung zum funktionierenden Prototyp. Zuvor bei Vodafone Türkei und KPMG.",
+      "M.Eng. in KI für intelligente Sensoren & Aktoren an der THD Deggendorf. Computer Vision, Edge AI und Sensorsysteme — von der Forschung zum funktionierenden Prototyp. Zuvor bei Vodafone Türkei und KPMG.",
     ctaPrimary: "Werdegang ansehen",
     ctaSecondary: "Kontakt aufnehmen",
     ctaCv: "Lebenslauf herunterladen",
@@ -847,7 +847,7 @@ const de: Dict = {
         period: "2025 — Heute",
         title: "M.Eng. Künstliche Intelligenz für intelligente Sensoren & Aktoren",
         org: "Technische Hochschule Deggendorf",
-        location: "Deutschland · Note 1,0",
+        location: "Deutschland",
         summary:
           "Anwendungsorientiertes Master-Programm mit Fokus auf intelligenter Sensorik. Kernthemen: KI, Machine Learning, Embedded Control, Systemdesign, Big Data und IoT-Kommunikation. Vollständig auf Englisch, F&E-orientiert.",
       },

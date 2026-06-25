@@ -45,6 +45,36 @@ export const CATEGORY_COLORS: Record<ProjectCategory, string> = {
 };
 
 export const PROJECTS: Project[] = [
+  /* ──────────── RESEARCH ──────────── */
+  {
+    slug: "ariel",
+    year: "2026",
+    category: "research",
+    featured: true,
+    titles: {
+      en: "Project Ariel — Low-Altitude Aerial Detection",
+      tr: "Proje Ariel — Alçak İrtifa Hava Tespiti",
+      de: "Projekt Ariel — Niedrigflug-Objekterkennung",
+    },
+    summaries: {
+      en: "Research collaboration at THD × THI × Fraunhofer IVI: fine-tuned YOLOv8n achieving 91.8% mAP@0.5 on a custom low-altitude drone dataset. Real-time ready at 4.2 ms per frame.",
+      tr: "THD × THI × Fraunhofer IVI araştırma iş birliği: özel alçak irtifa drone veri setinde %91,8 mAP@0.5 elde eden YOLOv8n. Kare başına 4,2 ms ile gerçek zamanlı hazır.",
+      de: "Forschungskooperation THD × THI × Fraunhofer IVI: YOLOv8n mit 91,8 % mAP@0.5 auf Niedrigflug-Drohnen-Datensatz. Echtzeittauglich bei 4,2 ms/Frame.",
+    },
+    tech: ["Python", "YOLOv8n", "PyTorch", "OpenCV", "Roboflow", "X-AnyLabeling", "ONNX", "Google Colab"],
+    tags: ["Research", "Computer Vision", "Edge AI"],
+    role: {
+      en: "ML Engineering — frame extraction, annotation methodology, dataset construction · Group-One, THD × THI",
+      tr: "ML Mühendisliği — kare çıkarma, etiketleme metodolojisi, veri seti · Group-One, THD × THI",
+      de: "ML Engineering — Frame-Extraktion, Annotationsmethodik, Datensatz · Group-One, THD × THI",
+    },
+    links: {
+      github: "https://github.com/BUAksakal/low-altitude-aerial-detection",
+      paper: "/projects/ariel/report.pdf",
+    },
+    cover: "/projects/ariel.svg",
+  },
+
   /* ──────────── WORK ──────────── */
   {
     slug: "vodafone-kpi-dashboard",

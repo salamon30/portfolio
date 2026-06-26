@@ -353,15 +353,15 @@ export default function ArielClient() {
         </motion.aside>
       </div>
 
-      {/* Sample predictions — full container width */}
+      {/* Sample predictions — full bleed */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-16"
+        className="mt-16 -mx-6 md:-mx-8"
       >
-        <h2 className="text-lg font-semibold tracking-tight">Sample Predictions</h2>
-        <div className="mt-4 flex flex-col gap-4">
+        <h2 className="text-lg font-semibold tracking-tight px-6 md:px-8">Sample Predictions</h2>
+        <div className="mt-4 flex flex-col gap-4 px-6 md:px-8">
           <div className="overflow-hidden rounded-2xl border border-default bg-subtle">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

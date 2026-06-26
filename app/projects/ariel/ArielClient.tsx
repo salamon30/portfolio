@@ -119,11 +119,19 @@ export default function ArielClient() {
             ))}
           </div>
 
-          {/* Cover */}
+          {/* Demo video */}
           <div className="mt-8 overflow-hidden rounded-2xl border border-default bg-subtle">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/projects/ariel.svg" alt="Project Ariel — aerial detection HUD" className="w-full object-cover" />
+            <video
+              src="https://github.com/user-attachments/assets/6bf30f82-0f2c-4328-b598-dad79f8f0d81"
+              controls
+              muted
+              loop
+              playsInline
+              className="w-full"
+              poster="/projects/ariel.svg"
+            />
           </div>
+          <p className="mt-2 text-xs text-faint">YOLOv8n · 2× speed · conf=0.50</p>
 
           {/* Problem */}
           <section className="mt-10">

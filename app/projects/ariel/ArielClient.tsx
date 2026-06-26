@@ -237,33 +237,6 @@ export default function ArielClient() {
             </div>
           </section>
 
-          {/* Sample predictions gallery */}
-          <section className="mt-10">
-            <h2 className="text-lg font-semibold tracking-tight">Sample Predictions</h2>
-            <div className="mt-4 flex flex-col gap-4">
-              <div className="overflow-hidden rounded-2xl border border-default bg-subtle">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/projects/ariel/predictions-grid.png"
-                  alt="THI_Bikepark and THI_Grass scene predictions"
-                  className="w-full"
-                  loading="lazy"
-                />
-                <p className="px-4 py-2.5 text-xs text-faint">THI_Bikepark · THI_Grass + Mixed Scenes — model predictions</p>
-              </div>
-              <div className="overflow-hidden rounded-2xl border border-default bg-subtle">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/projects/ariel/gt-vs-predictions.png"
-                  alt="Ground Truth Labels vs Model Predictions"
-                  className="w-full"
-                  loading="lazy"
-                />
-                <p className="px-4 py-2.5 text-xs text-faint">Ground Truth Labels vs Model Predictions — THI_Bikepark</p>
-              </div>
-            </div>
-          </section>
-
           {/* Key finding */}
           <section className="mt-10">
             <h2 className="text-lg font-semibold tracking-tight">Key Finding</h2>
@@ -379,6 +352,38 @@ export default function ArielClient() {
           </div>
         </motion.aside>
       </div>
+
+      {/* Sample predictions — full container width */}
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-16"
+      >
+        <h2 className="text-lg font-semibold tracking-tight">Sample Predictions</h2>
+        <div className="mt-4 flex flex-col gap-4">
+          <div className="overflow-hidden rounded-2xl border border-default bg-subtle">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/ariel/predictions-grid.png"
+              alt="THI_Bikepark and THI_Grass scene predictions"
+              className="w-full"
+              loading="lazy"
+            />
+            <p className="px-4 py-2.5 text-xs text-faint">THI_Bikepark · THI_Grass + Mixed Scenes — model predictions</p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-default bg-subtle">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/ariel/gt-vs-predictions.png"
+              alt="Ground Truth Labels vs Model Predictions"
+              className="w-full"
+              loading="lazy"
+            />
+            <p className="px-4 py-2.5 text-xs text-faint">Ground Truth Labels vs Model Predictions — THI_Bikepark</p>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 }

@@ -32,7 +32,7 @@ export type Project = {
   descriptions?: Record<Locale, string>;    // opsiyonel, daha uzun
   tech: string[];                            // ["Python", "SQL", ...]
   tags?: string[];                           // ["Data Viz", "NLP"] vb.
-  links?: { github?: string; demo?: string; paper?: string };
+  links?: { github?: string; demo?: string; paper?: string; api?: string };
   cover?: string;                            // "/projects/<slug>.jpg"
   role?: Record<Locale, string>;             // "Lead dev", "Team of 3" gibi
 };
@@ -135,28 +135,32 @@ export const PROJECTS: Project[] = [
     category: "uni",
     featured: true,
     titles: {
-      en: "Real-time PPE Helmet Detection",
-      tr: "Gerçek Zamanlı Baret Tespiti",
-      de: "Echtzeit-Helmerkennung (PSA)",
+      en: "PPE Helmet Detection — Live Cloud Deploy",
+      tr: "Baret Tespiti — Canlı Cloud Deploy",
+      de: "Helmerkennung — Live-Cloud-Deploy",
     },
     summaries: {
-      en: "M.Eng. case study for the Machine Learning and Deep Learning course: real-time detection of workers without hard hats using YOLOv8.",
-      tr: "Makine Öğrenmesi ve Derin Öğrenme dersi için yüksek lisans vaka çalışması: YOLOv8 ile baret takmayan çalışanların gerçek zamanlı tespiti.",
-      de: "Fallstudie im Kurs Machine Learning and Deep Learning: Echtzeit-Erkennung von Arbeitern ohne Schutzhelm mittels YOLOv8.",
+      en: "YOLOv8s fine-tuned for construction-site PPE compliance: 94.9% mAP@50, 103 FPS. Packaged as a FastAPI REST API + Streamlit dashboard, containerised in Docker, and deployed on Render with GitHub Actions CI/CD.",
+      tr: "İnşaat alanı KKD uyumu için ince ayarlı YOLOv8s: %94,9 mAP@50, 103 FPS. FastAPI REST API + Streamlit dashboard olarak paketlendi, Docker'da containerize edildi ve GitHub Actions CI/CD ile Render'da deploy edildi.",
+      de: "Feinabgestimmtes YOLOv8s für Baustellen-PSA-Compliance: 94,9 % mAP@50, 103 FPS. Als FastAPI REST API + Streamlit-Dashboard verpackt, in Docker containerisiert und mit GitHub Actions CI/CD auf Render deployed.",
     },
     descriptions: {
-      en: "Submitted as the final case study for the Machine Learning and Deep Learning course in my M.Eng. programme at THD Deggendorf. Trained YOLOv8 on a curated PPE dataset, evaluated detection accuracy under varying lighting and angles, and packaged the inference pipeline for live camera feeds. A representative industrial safety-compliance use case.",
-      tr: "THD Deggendorf'taki yüksek lisans programının Makine Öğrenmesi ve Derin Öğrenme dersi için bitirme vaka çalışması olarak teslim edildi. Özenle hazırlanmış bir KKD veri setinde YOLOv8 eğitildi, farklı ışık ve açılar altında tespit doğruluğu değerlendirildi ve çıkarım hattı canlı kamera akışları için paketlendi. Endüstriyel iş güvenliği uyumu için temsilî bir kullanım senaryosu.",
-      de: "Als abschließende Fallstudie für den Kurs Machine Learning and Deep Learning im Master-Programm an der THD Deggendorf eingereicht. YOLOv8 auf einem kuratierten PSA-Datensatz trainiert, Detektionsgenauigkeit unter unterschiedlichen Licht- und Blickwinkelbedingungen evaluiert und die Inferenz-Pipeline für Live-Kamerafeeds paketiert. Ein repräsentativer Anwendungsfall im industriellen Arbeitsschutz.",
+      en: "Final case study for the Machine Learning and Deep Learning course at THD Deggendorf — extended beyond coursework requirements into a full production deployment.\n\nModel: YOLOv8s trained on a curated PPE dataset. Achieved 94.9% mAP@50 at 103 FPS on GPU. Dataset quality and augmentation (mosaic, lighting shifts, perspective transforms) proved more impactful than model scaling.\n\nDeployment stack: inference wrapped in a FastAPI REST API, paired with an interactive Streamlit dashboard for live video upload and annotation preview. Both services containerised with Docker and deployed on Render. GitHub Actions handles CI/CD — every push to main triggers a rebuild and redeploy automatically.\n\nKey learning: the gap between held-out test accuracy and live-camera performance closed significantly after adding 200 frames from the actual deployment environment to the training set.",
+      tr: "THD Deggendorf'ta Makine Öğrenmesi ve Derin Öğrenme dersi için nihai vaka çalışması — ders gerekliliklerinin ötesine geçilerek tam production deployment'a uzatıldı.\n\nModel: Özenle hazırlanmış bir KKD veri setinde eğitilmiş YOLOv8s. GPU'da 103 FPS'de %94,9 mAP@50 elde edildi. Model ölçeklendirmesinden çok veri seti kalitesi ve augmentasyon (mozaik, aydınlatma kaymaları, perspektif dönüşümler) belirleyici oldu.\n\nDeploy stack'i: çıkarım, FastAPI REST API'ya sarıldı; canlı video yükleme ve anotasyon önizlemesi için interaktif bir Streamlit dashboard ile eşleştirildi. Her iki servis Docker ile containerize edilerek Render'da deploy edildi. GitHub Actions CI/CD'yi yönetiyor — main'e her push yeniden build ve deploy'u tetikliyor.\n\nTemel öğrenim: Gerçek deployment ortamından 200 kare eğitim setine eklendikten sonra test doğruluğu ile canlı kamera performansı arasındaki uçurum önemli ölçüde kapandı.",
+      de: "Abschließende Fallstudie für den Kurs Machine Learning and Deep Learning an der THD Deggendorf — über die Kursanforderungen hinaus zu einem vollständigen Produktions-Deployment ausgebaut.\n\nModell: YOLOv8s auf einem kuratierten PSA-Datensatz trainiert. 94,9 % mAP@50 bei 103 FPS auf GPU erreicht. Datensatzqualität und Augmentierung (Mosaik, Beleuchtungsverschiebungen, Perspektivtransformationen) erwiesen sich als wirkungsvoller als Model-Skalierung.\n\nDeployment-Stack: Inferenz in einer FastAPI REST API gekapselt, kombiniert mit einem interaktiven Streamlit-Dashboard für Live-Video-Upload und Annotationsvorschau. Beide Services in Docker containerisiert und auf Render deployed. GitHub Actions verwaltet CI/CD — jeder Push auf main löst automatisch einen Rebuild und Redeploy aus.\n\nKernlernpunkt: Die Lücke zwischen Test-Accuracy und Live-Kamera-Performance schloss sich deutlich, nachdem 200 Frames aus der tatsächlichen Deployment-Umgebung in den Trainingssatz aufgenommen wurden.",
     },
-    tech: ["Python", "YOLOv8", "PyTorch", "OpenCV", "Computer Vision"],
-    tags: ["CV", "Safety", "Deep Learning"],
+    tech: ["Python", "YOLOv8s", "PyTorch", "OpenCV", "FastAPI", "Docker", "Render", "GitHub Actions", "Streamlit"],
+    tags: ["CV", "MLOps", "Edge AI", "Deploy"],
     role: {
-      en: "Coursework · M.Eng.",
-      tr: "Ders projesi · Y.L.",
-      de: "Kursarbeit · M.Eng.",
+      en: "Solo · M.Eng. coursework extended to full production deploy",
+      tr: "Bireysel · Y.L. ders projesi → production deploy",
+      de: "Einzelarbeit · M.Eng.-Kursarbeit bis zum produktiven Deploy",
     },
-    links: { github: "https://github.com/salamon30/helmet-detection" },
+    links: {
+      github: "https://github.com/salamon30/helmet-detection",
+      demo: "https://helmet-streamlit.onrender.com",
+      api: "https://helmet-detection-6kf7.onrender.com/docs",
+    },
     cover: "/projects/helmet-detection.svg",
   },
 

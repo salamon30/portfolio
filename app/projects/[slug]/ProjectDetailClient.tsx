@@ -138,6 +138,17 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                     {t.projects.linkPaper}
                   </a>
                 )}
+                {project.links.api && (
+                  <a
+                    href={project.links.api}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 rounded-xl border border-default px-4 py-2.5 text-sm font-medium transition-colors hover:border-[var(--fg)]/30 hover:bg-subtle"
+                  >
+                    <ApiIcon />
+                    {t.projects.linkApi}
+                  </a>
+                )}
               </div>
             </div>
           )}
@@ -184,6 +195,15 @@ function PaperIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <path d="M6 3h9l5 5v13H6zM14 3v6h6" />
+    </svg>
+  );
+}
+
+function ApiIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M4 6h16M4 12h10M4 18h7" />
+      <path d="M19 15l2 2-2 2" />
     </svg>
   );
 }

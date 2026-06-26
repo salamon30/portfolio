@@ -19,7 +19,6 @@ export function NavBar() {
     { href: "/projects", label: t.nav.projects },
     { href: "/travel",   label: t.nav.travel },
     { href: "/think",    label: t.nav.think },
-    { href: "/writing",  label: t.nav.writing },
     { href: "/now",      label: t.nav.now },
     { href: "/contact",  label: t.nav.contact },
   ];

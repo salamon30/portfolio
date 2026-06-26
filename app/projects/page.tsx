@@ -203,11 +203,16 @@ function ProjectCard({
           </ul>
         )}
 
-        {project.links && (project.links.demo || project.links.paper) && (
+        {project.links && (project.links.demo || project.links.paper || project.links.api) && (
           <div className="mt-5 flex flex-wrap gap-2 border-t border-default pt-4">
             {project.links.demo && (
               <ProjectLink href={project.links.demo} icon="external">
                 {t.projects.linkDemo}
+              </ProjectLink>
+            )}
+            {project.links.api && (
+              <ProjectLink href={project.links.api} icon="external">
+                {t.projects.linkApi}
               </ProjectLink>
             )}
             {project.links.paper && (

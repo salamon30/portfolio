@@ -286,7 +286,7 @@ function SelectedWork() {
         </Link>
       </motion.div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {t.selectedWork.items.map((p, i) => (
           <motion.article
             key={p.title}
@@ -297,7 +297,7 @@ function SelectedWork() {
             className="card group relative flex flex-col p-6 transition-shadow hover:shadow-cardHover cursor-pointer"
           >
             <Link
-              href="/projects"
+              href={p.href ?? "/projects"}
               className="absolute inset-0 z-[1] rounded-[inherit]"
               aria-label={p.title}
             />
@@ -530,9 +530,6 @@ function Footer() {
             className="hover:text-[var(--fg)]"
           >
             {t.nav.cv}
-          </Link>
-          <Link href="/writing" className="hover:text-[var(--fg)]">
-            {t.nav.writing}
           </Link>
           <Link href="/now" className="hover:text-[var(--fg)]">
             {t.nav.now}

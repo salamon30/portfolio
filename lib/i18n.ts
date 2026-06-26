@@ -58,7 +58,7 @@ type Dict = {
     title: string;
     all: string;
     allProjects: string;
-    items: { kicker: string; title: string; summary: string; metric: string }[];
+    items: { kicker: string; title: string; summary: string; metric: string; href?: string }[];
   };
   journey: {
     kicker: string;
@@ -110,6 +110,7 @@ type Dict = {
     linkGithub: string;
     linkDemo: string;
     linkPaper: string;
+    linkApi: string;
     emptyTitle: string;
     emptyBody: string;
   };
@@ -167,11 +168,11 @@ const en: Dict = {
     now: "Now",
   },
   hero: {
-    status: "Bavaria · Seeking Werkstudent position — available immediately",
+    status: "Bavaria · Edge AI & CV Engineer · Seeking Werkstudent — available now",
     title1: "Turning sensor data",
     title2: "into intelligent decisions.",
     description:
-      "M.Eng. in AI for Smart Sensors & Actuators at THD Deggendorf. Computer vision, edge AI, and sensor systems — from research to working prototypes. Previously at Vodafone Türkiye and KPMG.",
+      "M.Eng. AI for Smart Sensors & Actuators at THD Deggendorf. Specialising in computer vision and edge AI — from training detection models to deploying them in Docker containers on cloud infrastructure. Previously at Vodafone Türkiye and KPMG.",
     ctaPrimary: "Read my background",
     ctaSecondary: "Get in touch",
     ctaCv: "Download CV",
@@ -188,17 +189,26 @@ const en: Dict = {
   },
   stack: { title: "Tools I work with" },
   selectedWork: {
-    kicker: "Selected experience",
-    title: "Recent professional work.",
+    kicker: "Featured work",
+    title: "What I've built and shipped.",
     all: "View full timeline",
     allProjects: "View all projects",
     items: [
+      {
+        kicker: "THD × THI × Fraunhofer IVI",
+        title: "PPE Helmet Detection · Live Deploy",
+        summary:
+          "YOLOv8s fine-tuned for construction site safety. 94.9% mAP@50, 103 FPS. FastAPI REST API + Streamlit dashboard containerised in Docker and deployed on Render with GitHub Actions CI/CD.",
+        metric: "94.9% mAP@50 · 103 FPS",
+        href: "/projects/helmet-detection",
+      },
       {
         kicker: "Vodafone Türkiye",
         title: "Data Science Intern",
         summary:
           "KPI and performance analytics across Mobile and Fixed Broadband. Reporting built in SQL, DBeaver, and Tableau and used in weekly senior-management reviews.",
         metric: "2025 · Istanbul",
+        href: "/projects/vodafone-kpi-dashboard",
       },
       {
         kicker: "KPMG Türkiye",
@@ -206,6 +216,7 @@ const en: Dict = {
         summary:
           "Data, analytics and automation engagements supporting clients' operating-model and reporting transformations.",
         metric: "2024–25 · Istanbul",
+        href: "/journey",
       },
       {
         kicker: "McKinsey & Company",
@@ -213,6 +224,7 @@ const en: Dict = {
         summary:
           "Selected for McKinsey's flagship development programme. Curriculum covered structured problem-solving, digital strategy, and analytical communication.",
         metric: "2023",
+        href: "/journey",
       },
     ],
   },
@@ -394,8 +406,9 @@ const en: Dict = {
     filterWork: "Internship",
     filterResearch: "Research",
     linkGithub: "Code",
-    linkDemo: "Demo",
+    linkDemo: "Dashboard",
     linkPaper: "Paper",
+    linkApi: "API",
     emptyTitle: "No projects in this category yet.",
     emptyBody: "Try another filter.",
   },
@@ -474,11 +487,11 @@ const tr: Dict = {
     now: "Şu An",
   },
   hero: {
-    status: "Bavyera · Werkstudent pozisyonu arıyorum — hemen başlayabilirim",
+    status: "Bavyera · Edge AI & Bilgisayar Görüsü Mühendisi · Werkstudent arıyorum — hemen başlarım",
     title1: "Sensör verisini",
     title2: "akıllı kararlara dönüştürmek.",
     description:
-      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı. Bilgisayar görüsü, edge AI ve sensör sistemleri — araştırmadan çalışan prototiplere. Daha önce Vodafone Türkiye ve KPMG'de çalıştım.",
+      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı. Bilgisayar görüsü ve edge AI'da uzmanlaşıyorum — tespit modellerini eğitmekten Docker container'larında deploy etmeye kadar. Daha önce Vodafone Türkiye ve KPMG'de çalıştım.",
     ctaPrimary: "Geçmişimi incele",
     ctaSecondary: "İletişime geç",
     ctaCv: "CV'yi indir",
@@ -495,17 +508,26 @@ const tr: Dict = {
   },
   stack: { title: "Kullandığım araçlar" },
   selectedWork: {
-    kicker: "Seçilmiş deneyim",
-    title: "Yakın dönem profesyonel çalışmalar.",
+    kicker: "Öne çıkan çalışmalar",
+    title: "Yaptıklarım ve deploy ettiklerim.",
     all: "Tüm zaman çizelgesi",
     allProjects: "Tüm projeleri gör",
     items: [
+      {
+        kicker: "THD × THI × Fraunhofer IVI",
+        title: "Baret Tespiti · Canlı Deploy",
+        summary:
+          "İnşaat alanı güvenliği için ince ayarlı YOLOv8s. %94,9 mAP@50, 103 FPS. FastAPI REST API + Streamlit dashboard, Docker container'ı olarak Render'da GitHub Actions CI/CD ile deploy edildi.",
+        metric: "%94,9 mAP@50 · 103 FPS",
+        href: "/projects/helmet-detection",
+      },
       {
         kicker: "Vodafone Türkiye",
         title: "Veri Bilimi Stajyeri",
         summary:
           "Mobil ve Sabit Geniş Bant segmentlerinde KPI ve performans analitiği. SQL, DBeaver ve Tableau ile geliştirilen, haftalık üst yönetim toplantılarında kullanılan raporlar.",
         metric: "2025 · İstanbul",
+        href: "/projects/vodafone-kpi-dashboard",
       },
       {
         kicker: "KPMG Türkiye",
@@ -513,6 +535,7 @@ const tr: Dict = {
         summary:
           "Müşterilerin operasyon modeli ve raporlama dönüşümlerini destekleyen veri, analitik ve otomasyon projeleri.",
         metric: "2024–25 · İstanbul",
+        href: "/journey",
       },
       {
         kicker: "McKinsey & Company",
@@ -520,6 +543,7 @@ const tr: Dict = {
         summary:
           "McKinsey'nin amiral gemisi gelişim programına seçildim. İçerik: yapılandırılmış problem çözme, dijital strateji ve analitik iletişim.",
         metric: "2023",
+        href: "/journey",
       },
     ],
   },
@@ -701,8 +725,9 @@ const tr: Dict = {
     filterWork: "Staj",
     filterResearch: "Araştırma",
     linkGithub: "Kod",
-    linkDemo: "Demo",
+    linkDemo: "Dashboard",
     linkPaper: "Makale",
+    linkApi: "API",
     emptyTitle: "Bu kategoride henüz proje yok.",
     emptyBody: "Başka bir filtre dene.",
   },
@@ -781,11 +806,11 @@ const de: Dict = {
     now: "Jetzt",
   },
   hero: {
-    status: "Bayern · Suche Werkstudentenstelle — sofort verfügbar",
+    status: "Bayern · Edge-AI- & CV-Ingenieur · Suche Werkstudentenstelle — sofort verfügbar",
     title1: "Sensordaten in",
     title2: "intelligente Entscheidungen.",
     description:
-      "M.Eng. in KI für intelligente Sensoren & Aktoren an der THD Deggendorf. Computer Vision, Edge AI und Sensorsysteme — von der Forschung zum funktionierenden Prototyp. Zuvor bei Vodafone Türkei und KPMG.",
+      "M.Eng. KI für intelligente Sensoren & Aktoren an der THD Deggendorf. Spezialisierung auf Computer Vision und Edge AI — vom Training von Detektionsmodellen bis zur Containerisierung und Bereitstellung in der Cloud. Zuvor bei Vodafone Türkei und KPMG.",
     ctaPrimary: "Werdegang ansehen",
     ctaSecondary: "Kontakt aufnehmen",
     ctaCv: "Lebenslauf herunterladen",
@@ -802,17 +827,26 @@ const de: Dict = {
   },
   stack: { title: "Meine Werkzeuge" },
   selectedWork: {
-    kicker: "Ausgewählte Erfahrung",
-    title: "Aktuelle berufliche Stationen.",
+    kicker: "Ausgewählte Arbeiten",
+    title: "Was ich gebaut und deployed habe.",
     all: "Vollständigen Werdegang",
     allProjects: "Alle Projekte ansehen",
     items: [
+      {
+        kicker: "THD × THI × Fraunhofer IVI",
+        title: "Helmerkennung · Live-Deploy",
+        summary:
+          "Feinabgestimmtes YOLOv8s für Baustellen-Sicherheitsüberwachung. 94,9 % mAP@50, 103 FPS. FastAPI REST API + Streamlit-Dashboard in Docker containerisiert und mit GitHub Actions CI/CD auf Render deployed.",
+        metric: "94,9 % mAP@50 · 103 FPS",
+        href: "/projects/helmet-detection",
+      },
       {
         kicker: "Vodafone Türkei",
         title: "Data-Science-Praktikant",
         summary:
           "KPI- und Performance-Analytik für Mobil- und Festnetzbreitband. Reporting in SQL, DBeaver und Tableau, eingesetzt in den wöchentlichen Senior-Management-Reviews.",
         metric: "2025 · Istanbul",
+        href: "/projects/vodafone-kpi-dashboard",
       },
       {
         kicker: "KPMG Türkei",
@@ -820,6 +854,7 @@ const de: Dict = {
         summary:
           "Daten-, Analytics- und Automatisierungsprojekte zur Unterstützung der Betriebsmodell- und Reporting-Transformationen von Kunden.",
         metric: "2024–25 · Istanbul",
+        href: "/journey",
       },
       {
         kicker: "McKinsey & Company",
@@ -827,6 +862,7 @@ const de: Dict = {
         summary:
           "Ausgewählter Teilnehmer im Flaggschiff-Entwicklungsprogramm. Inhalte: strukturierte Problemlösung, digitale Strategie und analytische Kommunikation.",
         metric: "2023",
+        href: "/journey",
       },
     ],
   },
@@ -1008,8 +1044,9 @@ const de: Dict = {
     filterWork: "Praktikum",
     filterResearch: "Forschung",
     linkGithub: "Code",
-    linkDemo: "Demo",
+    linkDemo: "Dashboard",
     linkPaper: "Paper",
+    linkApi: "API",
     emptyTitle: "Noch keine Projekte in dieser Kategorie.",
     emptyBody: "Bitte einen anderen Filter wählen.",
   },

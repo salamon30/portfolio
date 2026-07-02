@@ -13,22 +13,24 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://recepulasuzun.com"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
+    default: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
     template: "%s · Recep Ulaş Uzun",
   },
   description:
-    "Computer engineer pursuing a Master's in AI for Smart Sensors and Actuators at THD Deggendorf. Background in applied analytics at Vodafone Türkiye and KPMG. Based in Munich.",
+    "Edge AI and computer vision engineer — M.Eng. in AI for Smart Sensors and Actuators at THD Deggendorf. From training detection models to deploying them in production. Previously at Vodafone Türkiye and KPMG. Based in Bavaria.",
   keywords: [
     "Recep Uzun",
     "Recep Ulaş Uzun",
-    "Data Engineer",
-    "AI",
-    "Smart Sensors",
+    "Edge AI",
+    "Computer Vision",
     "Machine Learning",
+    "YOLOv8",
+    "Smart Sensors",
+    "Data Engineer",
     "Munich",
-    "THD",
-    "Vodafone",
-    "KPMG",
+    "Bavaria",
+    "THD Deggendorf",
+    "Werkstudent",
     "Portfolio",
   ],
   authors: [{ name: "Recep Ulaş Uzun" }],
@@ -38,23 +40,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Recep Ulaş Uzun",
-    title: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
+    title: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
     description:
-      "Computer engineer · Master's in AI for Smart Sensors and Actuators at THD Deggendorf · Applied analytics at Vodafone Türkiye and KPMG.",
+      "Edge AI & computer vision engineer · M.Eng. AI for Smart Sensors and Actuators at THD Deggendorf · Previously at Vodafone Türkiye and KPMG.",
     images: [
       {
         url: "/preview.png",
         width: 1200,
         height: 630,
-        alt: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
+        alt: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Recep Ulaş Uzun — Data, AI & Smart Sensors",
+    title: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
     description:
-      "Computer engineer · Master's in AI for Smart Sensors and Actuators at THD Deggendorf · Applied analytics at Vodafone Türkiye and KPMG.",
+      "Edge AI & computer vision engineer · M.Eng. AI for Smart Sensors and Actuators at THD Deggendorf · Previously at Vodafone Türkiye and KPMG.",
     images: ["/preview.png"],
   },
   robots: {
@@ -100,9 +102,9 @@ export default function RootLayout({
               name: "Recep Ulaş Uzun",
               url: SITE_URL,
               image: `${SITE_URL}/me/avatar.png`,
-              jobTitle: "M.Eng. Student — AI for Smart Sensors & Actuators",
+              jobTitle: "Edge AI & Computer Vision Engineer — M.Eng. AI for Smart Sensors & Actuators",
               description:
-                "Computer engineer pursuing a Master's in AI for Smart Sensors and Actuators at THD Deggendorf. Background in applied analytics at Vodafone Türkiye and KPMG.",
+                "Edge AI and computer vision engineer pursuing a Master's in AI for Smart Sensors and Actuators at THD Deggendorf. Previously in applied analytics at Vodafone Türkiye and KPMG.",
               worksFor: {
                 "@type": "CollegeOrUniversity",
                 name: "Technische Hochschule Deggendorf",

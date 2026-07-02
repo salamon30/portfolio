@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useT } from "@/lib/i18n";
 import { PROFILE_AVATAR, TENNIS_PHOTOS } from "@/lib/media";
+import { SOCIALS, socialHref } from "@/lib/socials";
 import NeuralNetworkBg from "@/components/NeuralNetworkBg";
 
 const container = {
@@ -511,16 +512,24 @@ function Footer() {
       <div className="container-page flex flex-col items-start justify-between gap-4 py-10 text-sm text-muted md:flex-row md:items-center">
         <p>© {new Date().getFullYear()} Recep Ulaş Uzun · {t.footer.built}</p>
         <div className="flex items-center gap-5">
-          <Link href="mailto:ulasch_uzun@hotmail.com" className="hover:text-[var(--fg)]">
+          <Link href={socialHref("email")} className="hover:text-[var(--fg)]">
             Email
           </Link>
           <Link
-            href="https://www.linkedin.com/in/recep-ulas-uzun/"
+            href={SOCIALS.linkedin}
             target="_blank"
             rel="noreferrer"
             className="hover:text-[var(--fg)]"
           >
             LinkedIn
+          </Link>
+          <Link
+            href={SOCIALS.github}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-[var(--fg)]"
+          >
+            GitHub
           </Link>
           <Link
             href="/cv/CV_Uzun.pdf"

@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://recepulasuzun.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/journey", "/projects", "/travel", "/think", "/contact"];
+  const routes = ["", "/journey", "/projects", "/travel", "/think", "/now", "/contact"];
   const now = new Date();
   return routes.map((r) => ({
     url: `${SITE_URL}${r}`,

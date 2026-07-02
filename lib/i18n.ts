@@ -196,6 +196,14 @@ const en: Dict = {
     items: [
       {
         kicker: "THD × THI × Fraunhofer IVI",
+        title: "Project Ariel — Low-Altitude Aerial Detection",
+        summary:
+          "Research collaboration on drone-based object detection: fine-tuned YOLOv8n reaching 91.8% mAP@0.5 on a custom low-altitude dataset — real-time ready at 4.2 ms per frame.",
+        metric: "91.8% mAP@0.5 · 4.2 ms/frame",
+        href: "/projects/ariel",
+      },
+      {
+        kicker: "M.Eng. Coursework · THD Deggendorf",
         title: "PPE Helmet Detection · Live Deploy",
         summary:
           "YOLOv8s fine-tuned for construction site safety. 94.9% mAP@50, 103 FPS. FastAPI REST API + Streamlit dashboard containerised in Docker and deployed on Render with GitHub Actions CI/CD.",
@@ -216,14 +224,6 @@ const en: Dict = {
         summary:
           "Data, analytics and automation engagements supporting clients' operating-model and reporting transformations.",
         metric: "2024–25 · Istanbul",
-        href: "/journey",
-      },
-      {
-        kicker: "McKinsey & Company",
-        title: "Forward Program — Digital Evolution",
-        summary:
-          "Selected for McKinsey's flagship development programme. Curriculum covered structured problem-solving, digital strategy, and analytical communication.",
-        metric: "2023",
         href: "/journey",
       },
     ],
@@ -515,6 +515,14 @@ const tr: Dict = {
     items: [
       {
         kicker: "THD × THI × Fraunhofer IVI",
+        title: "Proje Ariel — Alçak İrtifa Hava Tespiti",
+        summary:
+          "Drone tabanlı nesne tespiti üzerine araştırma iş birliği: özel alçak irtifa veri setinde %91,8 mAP@0.5'e ulaşan ince ayarlı YOLOv8n — kare başına 4,2 ms ile gerçek zamanlı hazır.",
+        metric: "%91,8 mAP@0.5 · 4,2 ms/kare",
+        href: "/projects/ariel",
+      },
+      {
+        kicker: "Y.L. Ders Projesi · THD Deggendorf",
         title: "Baret Tespiti · Canlı Deploy",
         summary:
           "İnşaat alanı güvenliği için ince ayarlı YOLOv8s. %94,9 mAP@50, 103 FPS. FastAPI REST API + Streamlit dashboard, Docker container'ı olarak Render'da GitHub Actions CI/CD ile deploy edildi.",
@@ -537,14 +545,6 @@ const tr: Dict = {
         metric: "2024–25 · İstanbul",
         href: "/journey",
       },
-      {
-        kicker: "McKinsey & Company",
-        title: "Forward Programı — Digital Evolution",
-        summary:
-          "McKinsey'nin amiral gemisi gelişim programına seçildim. İçerik: yapılandırılmış problem çözme, dijital strateji ve analitik iletişim.",
-        metric: "2023",
-        href: "/journey",
-      },
     ],
   },
   journey: {
@@ -564,7 +564,7 @@ const tr: Dict = {
         period: "2025 — Günümüz",
         title: "M.Eng. Akıllı Sensörler ve Aktüatörler için Yapay Zekâ",
         org: "Technische Hochschule Deggendorf",
-        location: "Almanya · Not 1.0",
+        location: "Almanya",
         summary:
           "Akıllı sensör sistemlerine odaklı, uygulama ağırlıklı yüksek lisans programı. Çekirdek alanlar: yapay zekâ, makine öğrenmesi, gömülü kontrol, sistem tasarımı, big data ve IoT iletişimi. Tamamen İngilizce, AR-GE odaklı.",
       },
@@ -834,6 +834,14 @@ const de: Dict = {
     items: [
       {
         kicker: "THD × THI × Fraunhofer IVI",
+        title: "Projekt Ariel — Niedrigflug-Objekterkennung",
+        summary:
+          "Forschungskooperation zur drohnenbasierten Objekterkennung: feinabgestimmtes YOLOv8n mit 91,8 % mAP@0.5 auf einem eigenen Niedrigflug-Datensatz — echtzeittauglich bei 4,2 ms pro Frame.",
+        metric: "91,8 % mAP@0.5 · 4,2 ms/Frame",
+        href: "/projects/ariel",
+      },
+      {
+        kicker: "M.Eng.-Kursarbeit · THD Deggendorf",
         title: "Helmerkennung · Live-Deploy",
         summary:
           "Feinabgestimmtes YOLOv8s für Baustellen-Sicherheitsüberwachung. 94,9 % mAP@50, 103 FPS. FastAPI REST API + Streamlit-Dashboard in Docker containerisiert und mit GitHub Actions CI/CD auf Render deployed.",
@@ -854,14 +862,6 @@ const de: Dict = {
         summary:
           "Daten-, Analytics- und Automatisierungsprojekte zur Unterstützung der Betriebsmodell- und Reporting-Transformationen von Kunden.",
         metric: "2024–25 · Istanbul",
-        href: "/journey",
-      },
-      {
-        kicker: "McKinsey & Company",
-        title: "Forward Program — Digital Evolution",
-        summary:
-          "Ausgewählter Teilnehmer im Flaggschiff-Entwicklungsprogramm. Inhalte: strukturierte Problemlösung, digitale Strategie und analytische Kommunikation.",
-        metric: "2023",
         href: "/journey",
       },
     ],

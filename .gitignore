@@ -19,3 +19,7 @@ yarn-error.log*
 .vercel
 *.tsbuildinfo
 next-env.d.ts.bak
+
+# local-only working notes
+HANDOFF.md
+public/me/Lecture-Six.pdf

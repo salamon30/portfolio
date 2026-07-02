@@ -4,11 +4,10 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-purple?logo=framer&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
 
-Personal portfolio for **Recep Uzun** — AI Master's student at THD Deggendorf, Germany. Built to stand out in job applications: clean design, full interactivity, trilingual, and dark-mode ready.
+Personal portfolio of **Recep Ulaş Uzun** — Edge AI & computer vision engineer, M.Eng. student in AI for Smart Sensors & Actuators at THD Deggendorf, Germany. Clean design, full interactivity, trilingual (EN / TR / DE), and dark-mode ready.
 
-[![Live Site](https://img.shields.io/badge/Live_Site-portfolio--recepuzun.vercel.app-000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/)
+[![Live Site](https://img.shields.io/badge/Live_Site-Vercel-000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/)
 
 [![Preview](https://raw.githubusercontent.com/salamon30/portfolio/main/public/preview.png)](https://portfolio-lemon-nu-ba4w5tqwof.vercel.app/)
 
@@ -42,6 +41,7 @@ Personal portfolio for **Recep Uzun** — AI Master's student at THD Deggendorf,
 | `/projects` | Project gallery with category filters and cover images |
 | `/travel` | Interactive world map + 12-country photo gallery with notes |
 | `/think` | 5-step problem-solving method + skill toolkit |
+| `/now` | What I'm working on, reading and learning right now |
 | `/contact` | Direct channels + contact form (Resend) |
 
 ---
@@ -164,7 +164,7 @@ Add the optional environment variables in Vercel Project → Settings → Enviro
 
 ## Author
 
-**Recep Uzun** — AI Master's Student @ Deggendorf Institute of Technology
+**Recep Ulaş Uzun** — Edge AI & Computer Vision Engineer · M.Eng. AI for Smart Sensors & Actuators @ Deggendorf Institute of Technology
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-recep--ulas--uzun-0077b5?logo=linkedin)](https://www.linkedin.com/in/recep-ulas-uzun/)
 [![GitHub](https://img.shields.io/badge/GitHub-salamon30-181717?logo=github)](https://github.com/salamon30)

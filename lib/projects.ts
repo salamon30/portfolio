@@ -255,9 +255,9 @@ export const PROJECTS: Project[] = [
     year: "2024",
     category: "uni",
     titles: {
-      en: "BookShelf Genious — Web Development",
-      tr: "BookShelf Genious — Web Geliştirme",
-      de: "BookShelf Genious — Webentwicklung",
+      en: "BookShelf Genius — Web Development",
+      tr: "BookShelf Genius — Web Geliştirme",
+      de: "BookShelf Genius — Webentwicklung",
     },
     summaries: {
       en: "Web Development coursework in TypeScript: a book-tracking interface covering component composition and typed state management.",

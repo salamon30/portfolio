@@ -272,6 +272,52 @@ export default function HelmetDetectionClient() {
         </motion.aside>
       </div>
 
+      {/* Streamlit dashboard */}
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.18 }}
+        className="mt-16"
+      >
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="text-lg font-semibold tracking-tight">Streamlit Dashboard</h2>
+          <a
+            href="https://helmet-streamlit.onrender.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-muted transition-colors hover:text-[var(--fg)]"
+          >
+            Open live dashboard →
+          </a>
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl border border-default bg-subtle">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/helmet-detection/dashboard-detection.png"
+              alt="Streamlit dashboard — detection tab with image, video and webcam modes"
+              className="w-full"
+              loading="lazy"
+            />
+            <figcaption className="px-4 py-2.5 text-xs text-faint">
+              Detection — image / video / webcam input with adjustable confidence threshold
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-2xl border border-default bg-subtle">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/projects/helmet-detection/dashboard-analysis.png"
+              alt="Streamlit dashboard — model analysis tab with per-class performance metrics"
+              className="w-full"
+              loading="lazy"
+            />
+            <figcaption className="px-4 py-2.5 text-xs text-faint">
+              Model Analysis — per-class metrics and training curves
+            </figcaption>
+          </figure>
+        </div>
+      </motion.section>
+
       {/* Sample detections */}
       <motion.section
         initial={{ opacity: 0, y: 12 }}

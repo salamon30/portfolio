@@ -161,7 +161,7 @@ export const PROJECTS: Project[] = [
       demo: "https://helmet-streamlit.onrender.com",
       api: "https://helmet-detection-6kf7.onrender.com/docs",
     },
-    cover: "/projects/helmet-detection.svg",
+    cover: "/projects/helmet-detection/still-1.jpg",
   },
 
   /* ──────────── PERSONAL / OPEN-SOURCE ──────────── */

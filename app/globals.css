@@ -14,6 +14,8 @@
     --border: #eaeaea;
     --border-strong: #d4d4d4;
     --accent: #378add;
+    --accent-2: #8b5cf6;
+    --accent-3: #ec4899;
     --grid: rgba(10, 10, 10, 0.04);
   }
 
@@ -26,6 +28,8 @@
     --border: #1f1f1f;
     --border-strong: #2a2a2a;
     --accent: #4a9ae8;
+    --accent-2: #a78bfa;
+    --accent-3: #f472b6;
     --grid: rgba(255, 255, 255, 0.04);
   }
 
@@ -64,13 +68,13 @@
     @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5
            text-sm font-medium transition-colors duration-150
            focus:outline-none focus:ring-2 focus:ring-offset-2;
-    background: var(--accent);
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
     color: #ffffff;
     --tw-ring-color: color-mix(in srgb, var(--accent) 30%, transparent);
     --tw-ring-offset-color: var(--bg);
   }
   .btn-primary:hover {
-    background: color-mix(in srgb, var(--accent) 85%, black);
+    filter: brightness(1.08) saturate(1.05);
   }
 
   .btn-ghost {
@@ -90,14 +94,26 @@
   .card {
     background: var(--bg);
     border: 1px solid var(--border);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
     @apply rounded-2xl shadow-card;
+  }
+  .card:hover {
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
   }
 
   .chip {
     @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
-    background: var(--bg);
+    background: color-mix(in srgb, var(--accent) 6%, var(--bg));
     color: var(--fg-muted);
-    border: 1px solid var(--border);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  }
+
+  /* Gradient headline text — blue → violet → pink */
+  .text-gradient {
+    background: linear-gradient(100deg, var(--accent) 0%, var(--accent-2) 55%, var(--accent-3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .num {

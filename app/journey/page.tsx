@@ -14,7 +14,7 @@ export default function JourneyPage() {
         transition={{ duration: 0.5 }}
         className="mb-12 max-w-2xl"
       >
-        <p className="text-xs uppercase tracking-[0.18em] text-faint">
+        <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
           {t.journey.kicker}
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">

@@ -66,14 +66,15 @@ export function NavBar() {
                   href={item.href}
                   className={`relative isolate rounded-full px-3.5 py-1.5 text-sm transition-colors ${
                     active
-                      ? "text-[var(--fg)]"
+                      ? "text-[var(--accent)]"
                       : "text-[var(--fg-muted)] hover:text-[var(--fg)]"
                   }`}
                 >
                   {active && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-subtle"
+                      className="absolute inset-0 -z-10 rounded-full"
+                      style={{ background: "color-mix(in srgb, var(--accent) 10%, transparent)" }}
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -161,9 +162,14 @@ export function NavBar() {
                       onClick={() => setOpen(false)}
                       className={`rounded-xl px-4 py-3 text-base transition-colors ${
                         active
-                          ? "bg-subtle text-[var(--fg)]"
+                          ? "text-[var(--accent)]"
                           : "text-[var(--fg-muted)] hover:bg-subtle hover:text-[var(--fg)]"
                       }`}
+                      style={
+                        active
+                          ? { background: "color-mix(in srgb, var(--accent) 10%, transparent)" }
+                          : undefined
+                      }
                     >
                       {item.label}
                     </Link>

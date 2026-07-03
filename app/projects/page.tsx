@@ -41,7 +41,7 @@ export default function ProjectsPage() {
         transition={{ duration: 0.5 }}
         className="mb-10 max-w-2xl"
       >
-        <p className="text-xs uppercase tracking-[0.18em] text-faint">
+        <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
           {t.projects.kicker}
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">

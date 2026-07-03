@@ -103,7 +103,7 @@ function Hero() {
           >
             {t.hero.title1}
             <br />
-            <span className="text-muted">{t.hero.title2}</span>
+            <span className="text-gradient">{t.hero.title2}</span>
           </motion.h1>
 
           <motion.p
@@ -196,10 +196,10 @@ function BackgroundDecoration() {
 function MetricsRow() {
   const { t } = useT();
   const metrics = [
-    { value: t.metrics.years, label: t.metrics.yearsLabel },
-    { value: t.metrics.projects, label: t.metrics.projectsLabel },
-    { value: t.metrics.countries, label: t.metrics.countriesLabel },
-    { value: t.metrics.languages, label: t.metrics.languagesLabel },
+    { value: t.metrics.years, label: t.metrics.yearsLabel, color: "var(--accent)" },
+    { value: t.metrics.projects, label: t.metrics.projectsLabel, color: "var(--accent-2)" },
+    { value: t.metrics.countries, label: t.metrics.countriesLabel, color: "var(--accent-3)" },
+    { value: t.metrics.languages, label: t.metrics.languagesLabel, color: "#10b981" },
   ];
   return (
     <div className="grid grid-cols-2 border-y border-default md:grid-cols-4">
@@ -210,7 +210,10 @@ function MetricsRow() {
             i > 0 ? "border-l border-default" : ""
           } ${i >= 2 ? "border-t border-default md:border-t-0" : ""}`}
         >
-          <span className="num text-3xl font-semibold tracking-tight md:text-4xl">
+          <span
+            className="num text-3xl font-semibold tracking-tight md:text-4xl"
+            style={{ color: m.color }}
+          >
             {m.value}
           </span>
           <span className="text-xs text-faint md:text-sm">{m.label}</span>
@@ -246,7 +249,7 @@ function LogosStrip() {
           {items.map((label) => (
             <span
               key={label}
-              className="num text-sm font-medium text-muted transition-colors hover:text-[var(--fg)]"
+              className="num text-sm font-medium text-muted transition-colors hover:text-[var(--accent)]"
             >
               {label}
             </span>
@@ -272,7 +275,7 @@ function SelectedWork() {
         className="mb-12 flex items-end justify-between"
       >
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-faint">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)]">
             {t.selectedWork.kicker}
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
@@ -365,7 +368,7 @@ function OffCourt() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <p className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-faint">
+            <p className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#10b981]">
               <TennisIcon />
               {t.tennis.kicker}
             </p>
@@ -384,7 +387,7 @@ function OffCourt() {
                     i > 0 ? "border-l border-default pl-4" : ""
                   }`}
                 >
-                  <span className="num text-2xl font-semibold tracking-tight md:text-3xl">
+                  <span className="num text-2xl font-semibold tracking-tight text-[#10b981] md:text-3xl">
                     {s.value}
                   </span>
                   <span className="text-[11px] uppercase tracking-[0.14em] text-faint">
@@ -484,7 +487,6 @@ function TennisIcon() {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden
-      className="text-[var(--accent)]"
     >
       <circle
         cx="12"

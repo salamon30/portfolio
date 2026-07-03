@@ -49,7 +49,7 @@ export default function NowPage() {
         transition={{ duration: 0.5 }}
         className="mb-14 max-w-2xl"
       >
-        <p className="text-xs uppercase tracking-[0.18em] text-faint">Now</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-[var(--accent)]">Now</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
           What I&apos;m up to.
         </h1>

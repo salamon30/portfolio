@@ -128,7 +128,7 @@ export default function ArielClient() {
               loop
               playsInline
               className="w-full"
-              poster="/projects/ariel.svg"
+              poster="/projects/ariel/cover.jpg"
             />
           </div>
           <p className="mt-2 text-xs text-faint">YOLOv8n · 2× speed · conf=0.50</p>

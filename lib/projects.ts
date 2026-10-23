@@ -166,6 +166,34 @@ export const PROJECTS: Project[] = [
 
   /* ──────────── PERSONAL / OPEN-SOURCE ──────────── */
   {
+    slug: "fin-agent-intelligence",
+    year: "2026",
+    category: "personal",
+    titles: {
+      en: "Fin-Agent Intelligence — Personal Finance Dashboard",
+      tr: "Fin-Agent Intelligence — Kişisel Finans Panosu",
+      de: "Fin-Agent Intelligence — Persönliches Finanz-Dashboard",
+    },
+    summaries: {
+      en: "Full-stack finance dashboard with an LLM tool-calling agent: multi-currency credit-card tracking, PDF statement parsing, FX-cost analysis, and a 6-month cash-flow projection with what-if scenarios. In active daily use.",
+      tr: "LLM tool-calling ajanlı uçtan uca finans panosu: çoklu para birimli kredi kartı takibi, PDF ekstre okuma, kur maliyeti analizi ve senaryo destekli 6 aylık nakit akışı projeksiyonu. Her gün aktif kullanılıyor.",
+      de: "Full-Stack-Finanz-Dashboard mit einem Tool-Calling-LLM-Agenten: Multi-Currency-Kreditkartenverfolgung, PDF-Kontoauszug-Parsing, FX-Kostenanalyse und eine 6-Monats-Cashflow-Projektion mit Was-wäre-wenn-Szenarien. Im täglichen aktiven Einsatz.",
+    },
+    descriptions: {
+      en: "A personal finance tool built to track real multi-currency credit cards across different countries, run as an iterative, long-term build rather than a one-off assignment.\n\nBackend: FastAPI + SQLAlchemy, with a PDF/OCR statement parser that reads real bank e-statements (text and scanned) and reconciles them against previously recorded transactions, correcting amounts on re-upload instead of duplicating rows. A dedicated FX-cost engine computes the real markup a card charges on foreign purchases, with historical exchange rates pulled from stored rate data rather than assumed.\n\nAI agent: a genuine tool-calling LLM agent (NVIDIA NIM, OpenAI-compatible) with ~15 financial tools — net worth, FX card recommendations, trip cost analysis, installment schedules, cash-flow projections. Any action that would modify a financial record goes through a human-in-the-loop confirmation step by architecture: the LLM can only ever propose a write, a separate endpoint with no corresponding tool performs it. All tool calls are logged with latency/token metadata for observability, deliberately excluding the financial values themselves.\n\nCash-flow engine: a 6-month net-worth projection seeded from real current balances, plus a what-if scenario simulator (FX-rate shocks, delayed income, lump-sum debt payoff) that is guaranteed never to write to the real financial records — simulation and reality are kept in fully separate code paths.\n\nBuilt and iterated through close collaboration with Claude (Anthropic) across many sessions — audits, bug fixes, and new features, each backed by a real regression test and verified against real data rather than assumed correct.",
+      tr: "Farklı ülkelerdeki gerçek, çoklu para birimli kredi kartlarını takip etmek için yapılmış kişisel bir finans aracı — tek seferlik bir ödev değil, uzun soluklu, yinelemeli bir geliştirme olarak sürdürülüyor.\n\nBackend: FastAPI + SQLAlchemy; gerçek banka e-ekstrelerini (metin ve taranmış) okuyan bir PDF/OCR ayrıştırıcı, bunları daha önce kaydedilmiş işlemlerle karşılaştırıp yeniden yüklemede satırları çoğaltmak yerine tutarları düzeltiyor. Ayrı bir kur maliyeti motoru, bir kartın yurt dışı harcamalarda gerçekte ne kadar kur farkı/komisyon kestiğini, varsayılan değil kayıtlı geçmiş kur verisiyle hesaplıyor.\n\nAI ajan: ~15 finansal araca sahip, gerçek tool-calling yapan bir LLM ajanı (NVIDIA NIM, OpenAI uyumlu) — net varlık, kur bazlı kart önerisi, seyahat maliyet analizi, taksit takvimi, nakit akışı projeksiyonu. Finansal bir kaydı değiştirecek her eylem, mimari düzeyde insan onayından geçiyor: LLM sadece bir yazma işlemini önerebilir, bunu gerçekleştiren ayrı bir endpoint'in karşılığında hiçbir araç tanımı yok. Tüm araç çağrıları gecikme/token metadatasıyla loglanıyor, finansal değerlerin kendisi kasıtlı olarak hariç tutuluyor.\n\nNakit akışı motoru: gerçek güncel bakiyelerden başlayan 6 aylık net varlık projeksiyonu, artı gerçek kayıtlara asla yazmadığı garanti edilen bir what-if senaryo simülatörü (kur şoku, gecikmeli gelir, toplu borç ödemesi) — simülasyon ve gerçek veri tamamen ayrı kod yollarında tutuluyor.\n\nClaude (Anthropic) ile birçok oturum boyunca yakın iş birliğiyle geliştirildi ve yinelendi — denetimler, hata düzeltmeleri ve yeni özellikler, her biri gerçek bir regresyon testiyle desteklenip gerçek veriyle doğrulandı.",
+      de: "Ein persönliches Finanztool zur Verfolgung echter Multi-Currency-Kreditkarten in verschiedenen Ländern — als iterativer Langzeit-Build geführt, nicht als einmalige Aufgabe.\n\nBackend: FastAPI + SQLAlchemy mit einem PDF/OCR-Kontoauszug-Parser, der echte Bank-E-Kontoauszüge (Text und gescannt) liest und mit zuvor erfassten Transaktionen abgleicht — bei erneutem Upload werden Beträge korrigiert statt Zeilen dupliziert. Eine dedizierte FX-Kosten-Engine berechnet den tatsächlichen Aufschlag, den eine Karte bei Fremdwährungskäufen berechnet, basierend auf gespeicherten historischen Wechselkursen statt Annahmen.\n\nKI-Agent: ein echter Tool-Calling-LLM-Agent (NVIDIA NIM, OpenAI-kompatibel) mit ca. 15 Finanz-Tools — Nettovermögen, FX-Kartenempfehlungen, Reisekostenanalyse, Ratenzahlungspläne, Cashflow-Projektionen. Jede Aktion, die einen Finanzdatensatz ändern würde, durchläuft architektonisch einen Human-in-the-Loop-Bestätigungsschritt: Das LLM kann einen Schreibvorgang nur vorschlagen, ein separater Endpunkt ohne zugehöriges Tool führt ihn aus. Alle Tool-Aufrufe werden mit Latenz-/Token-Metadaten protokolliert, die eigentlichen Finanzwerte bewusst ausgeschlossen.\n\nCashflow-Engine: eine 6-Monats-Nettovermögensprojektion, ausgehend von echten aktuellen Salden, plus ein Was-wäre-wenn-Szenario-Simulator (FX-Kursschocks, verzögertes Einkommen, Einmalzahlung auf Schulden), der garantiert nie in die echten Finanzdatensätze schreibt — Simulation und Realität bleiben in vollständig getrennten Codepfaden.\n\nIn enger Zusammenarbeit mit Claude (Anthropic) über viele Sitzungen hinweg entwickelt und iteriert — Audits, Bugfixes und neue Features, jeweils durch einen echten Regressionstest abgesichert und gegen echte Daten verifiziert statt als korrekt angenommen.",
+    },
+    tech: ["Python", "FastAPI", "SQLAlchemy", "React", "TypeScript", "Recharts", "NVIDIA NIM", "SQLite"],
+    tags: ["FinTech", "LLM Agent", "Full-Stack"],
+    role: {
+      en: "Solo · personal project, in active daily use",
+      tr: "Bireysel · kişisel proje, her gün aktif kullanımda",
+      de: "Einzelarbeit · persönliches Projekt, im täglichen aktiven Einsatz",
+    },
+    cover: "/projects/fin-agent-intelligence.png",
+  },
+  {
     slug: "sensor-anomaly-detection",
     year: "2026",
     category: "personal",

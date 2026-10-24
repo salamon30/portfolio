@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PROJECTS } from "@/lib/projects";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://recepulasuzun.com";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Projects",

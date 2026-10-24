@@ -2,18 +2,20 @@
  * Canonical site URL, used for metadata, sitemap, robots and JSON-LD.
  *
  * Order of precedence:
- *   1) NEXT_PUBLIC_SITE_URL  → set this once a custom domain is live
- *   2) VERCEL_PROJECT_PRODUCTION_URL → injected by Vercel at build time
- *   3) the current production deployment on vercel.app
+ *   1) VERCEL_PROJECT_PRODUCTION_URL → injected by Vercel at build time.
+ *      It always holds the live production domain, and switches to a
+ *      custom domain automatically once one is added in Vercel.
+ *   2) NEXT_PUBLIC_SITE_URL → for local builds or hosting outside Vercel.
+ *   3) the current production deployment on vercel.app.
  *
- * Do not point the fallback at a domain that is not registered yet:
- * search engines and link previews follow the canonical URL.
+ * Vercel's own value wins so a stale NEXT_PUBLIC_SITE_URL in the dashboard
+ * can never point canonical URLs and link previews at a dead domain.
  */
-const fromEnv = process.env.NEXT_PUBLIC_SITE_URL;
 const fromVercel = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : undefined;
+const fromEnv = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const SITE_URL = (
-  fromEnv ?? fromVercel ?? "https://portfolio-lemon-nu-ba4w5tqwof.vercel.app"
+  fromVercel ?? fromEnv ?? "https://portfolio-lemon-nu-ba4w5tqwof.vercel.app"
 ).replace(/\/+$/, "");

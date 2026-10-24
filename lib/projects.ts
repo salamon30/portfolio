@@ -204,16 +204,16 @@ export const PROJECTS: Project[] = [
       de: "Sensor-Anomalie-Erkennung",
     },
     summaries: {
-      en: "Personal study project on time-series ML: detection of anomalous patterns in sensor data, in preparation for the Edge AI work in my Master's programme.",
-      tr: "Zaman-serisi ML üzerine kişisel çalışma projesi: sensör verilerinde anormal örüntülerin tespiti; yüksek lisanstaki Edge AI çalışmalarına hazırlık niteliğinde.",
-      de: "Persönliches Studienprojekt zu Time-Series-ML: Erkennung anomaler Muster in Sensordaten als Vorbereitung auf die Edge-AI-Arbeit im Master-Programm.",
+      en: "Personal study project on unsupervised ML: flagging faulty readings in multivariate sensor data with an Isolation Forest, in preparation for the Edge AI work in my Master's programme.",
+      tr: "Denetimsiz ML üzerine kişisel çalışma projesi: çok değişkenli sensör verisinde hatalı okumaların Isolation Forest ile tespiti; yüksek lisanstaki Edge AI çalışmalarına hazırlık niteliğinde.",
+      de: "Persönliches Studienprojekt zu unüberwachtem ML: Erkennung fehlerhafter Messwerte in multivariaten Sensordaten mit einem Isolation Forest, als Vorbereitung auf die Edge-AI-Arbeit im Master-Programm.",
     },
     descriptions: {
-      en: "Self-directed study in time-series machine learning, run alongside coursework. Benchmarks classical statistical baselines (rolling z-score, IQR) against learned approaches for anomaly detection in sensor streams. Designed as a reusable framework adaptable to different sensor types and domains.",
-      tr: "Ders programıyla paralel yürütülen, kendi yön verdiğim bir zaman-serisi makine öğrenmesi çalışması. Sensör akışlarında anomali tespiti için klasik istatistiksel temel modelleri (kayan z-skor, IQR), öğrenilmiş yaklaşımlarla karşılaştırır. Farklı sensör türlerine ve alanlara uyarlanabilen yeniden kullanılabilir bir çerçeve olarak tasarlandı.",
-      de: "Eigenständige Untersuchung im Bereich Time-Series-Machine-Learning, parallel zum Studium durchgeführt. Vergleicht klassische statistische Baselines (rollender z-Score, IQR) mit gelernten Ansätzen zur Anomalie-Erkennung in Sensorströmen. Konzipiert als wiederverwendbares Framework, das sich an unterschiedliche Sensortypen und Domänen anpassen lässt.",
+      en: "Self-directed study in unsupervised anomaly detection, run alongside coursework. A configurable pipeline simulates temperature, vibration and pressure readings for normal operation and injected faults, standardises them and flags outliers with an Isolation Forest — no labels needed for training. It renders a 4-panel diagnostic dashboard and scores the result against the known ground truth (precision, recall and F1 of 95% on the default 220-reading run).",
+      tr: "Ders programıyla paralel yürüttüğüm, denetimsiz anomali tespiti üzerine kişisel bir çalışma. Yapılandırılabilir bir pipeline, normal çalışma ve eklenmiş arızalar için sıcaklık, titreşim ve basınç okumaları üretir, bunları standartlaştırır ve aykırı değerleri Isolation Forest ile işaretler — eğitim için etiket gerekmez. 4 panelli bir tanı panosu çizer ve sonucu bilinen gerçek etiketlere göre değerlendirir (varsayılan 220 okumalık çalıştırmada precision, recall ve F1 %95).",
+      de: "Eigenständige Untersuchung zur unüberwachten Anomalie-Erkennung, parallel zum Studium durchgeführt. Eine konfigurierbare Pipeline simuliert Temperatur-, Vibrations- und Druckwerte für Normalbetrieb und eingestreute Fehler, standardisiert sie und markiert Ausreißer mit einem Isolation Forest — ohne gelabelte Trainingsdaten. Sie erzeugt ein 4-Panel-Diagnose-Dashboard und bewertet das Ergebnis gegen die bekannte Ground Truth (Precision, Recall und F1 von 95 % im Standardlauf mit 220 Messwerten).",
     },
-    tech: ["Python", "scikit-learn", "NumPy", "pandas", "Matplotlib", "Time Series"],
+    tech: ["Python", "scikit-learn", "Isolation Forest", "NumPy", "pandas", "Matplotlib"],
     tags: ["ML", "Sensors", "Edge AI"],
     role: {
       en: "Solo · personal study",

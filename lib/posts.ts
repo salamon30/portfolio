@@ -17,66 +17,84 @@ export type Post = {
 export const POSTS: Post[] = [
   {
     slug: "sensor-anomaly-detection-approaches",
-    title: "Sensor Anomaly Detection: Three Approaches Compared",
+    title: "Isolation Forest for Sensor Faults: Why 95% F1 Is Not the Whole Story",
     date: "2026-05-15",
     summary:
-      "A hands-on comparison of rolling z-score, IQR filtering and Isolation Forest for detecting anomalous patterns in industrial sensor streams.",
-    tags: ["Machine Learning", "Time Series", "Python"],
-    readingTime: 6,
+      "A small unsupervised anomaly-detection pipeline for multivariate sensor data, and the one hyperparameter that quietly decides whether it looks brilliant or mediocre.",
+    tags: ["Machine Learning", "Anomaly Detection", "Python"],
+    readingTime: 4,
     body: `
-<p>Anomaly detection in sensor data is one of those problems that looks straightforward until you actually try to solve it in production. During my personal study project on time-series ML, I benchmarked three approaches against the same dataset of vibration sensor readings from an industrial motor.</p>
+<p>Real industrial machines rarely come with labelled fault data. That is why unsupervised anomaly detection is attractive for predictive maintenance: you learn what "normal" looks like and flag whatever does not fit. As a self-study project before my Master's Edge AI work, I built a compact pipeline to understand how this behaves in practice.</p>
 
-<h2>The Dataset</h2>
-<p>The dataset contained ~50k readings at 10 Hz from a rotating motor — temperature, vibration (x, y, z axes) and current draw. Anomalies ranged from gradual drift to sharp spikes, making it a good stress test for different detection strategies.</p>
+<h2>The Setup</h2>
+<p>The data is simulated so that the ground truth is known. The pipeline generates 200 normal readings and 20 fault readings across three channels: temperature, vibration and pressure. Faults run hotter, vibrate harder and sit at higher pressure, each with its own noise.</p>
+<pre><code>Raw sensor data → StandardScaler → Isolation Forest → labels + dashboard</code></pre>
+<p>Scaling matters here. Pressure lives around 100 while vibration lives around 0.5, so without standardisation one channel would dominate the random splits.</p>
 
-<h2>Approach 1 — Rolling Z-Score</h2>
-<p>The simplest baseline: compute a rolling mean and standard deviation over a window of N samples, flag any point more than k standard deviations away. Surprisingly robust for sudden spikes, but it struggles with gradual drift because the window mean shifts with the signal.</p>
-<pre><code>z = (x - rolling_mean) / rolling_std
-anomaly = abs(z) > threshold</code></pre>
-<p><strong>Verdict:</strong> fast, interpretable, good starting point. Fails on slow drift and seasonality.</p>
+<h2>Why Isolation Forest</h2>
+<p>Isolation Forest builds random trees that split on a random feature at a random value. Anomalies are few and different, so they get isolated in fewer splits. The average path length becomes the anomaly score. It needs no labels and stays cheap to score, which fits sensor workloads well.</p>
 
-<h2>Approach 2 — IQR Filtering</h2>
-<p>Compute the interquartile range over a rolling window and flag points outside [Q1 − 1.5·IQR, Q3 + 1.5·IQR]. More robust to skewed distributions than z-score because it uses the median rather than the mean.</p>
-<p><strong>Verdict:</strong> better on non-Gaussian noise, still misses contextual anomalies (a reading that is normal in isolation but abnormal in context).</p>
+<h2>The Result, and the Catch</h2>
+<p>With the default settings, the model detects 20 readings as faults, with 95% precision, recall and F1. That looks great, but one parameter does most of the work: <code>contamination</code>, the fraction of points the model is told to flag.</p>
+<table>
+  <thead><tr><th>contamination</th><th>Precision</th><th>Recall</th><th>F1</th></tr></thead>
+  <tbody>
+    <tr><td>0.05</td><td>100%</td><td>55%</td><td>71%</td></tr>
+    <tr><td>0.09</td><td>95%</td><td>95%</td><td>95%</td></tr>
+    <tr><td>0.15</td><td>61%</td><td>100%</td><td>76%</td></tr>
+  </tbody>
+</table>
+<p>The default of 0.09 is almost exactly the true fault rate of 20 in 220. In other words, the strong score partly comes from telling the model how many faults to expect. On a real machine you do not know that number in advance.</p>
 
-<h2>Approach 3 — Isolation Forest</h2>
-<p>A tree-based unsupervised method that isolates anomalies by randomly selecting a feature and a split value — anomalies are isolated in fewer splits. I used a sliding window of 20 samples as a feature vector to give the model temporal context.</p>
-<p><strong>Verdict:</strong> best F1 on the test set (0.87 vs 0.71 and 0.74 for the statistical methods), but ~40× slower to score. For offline analysis this is fine; for edge deployment you need the simpler methods.</p>
-
-<h2>Takeaway</h2>
-<p>For edge AI applications the practical answer is usually a hybrid: rolling z-score as a fast first-pass filter, Isolation Forest offline to tune thresholds and catch what the statistical methods miss. The right choice depends on your latency budget and how much labelled data you have.</p>
-<p>The full code is on <a href="https://github.com/salamon30/sensor-anomaly-detection" target="_blank" rel="noreferrer">GitHub</a>.</p>
+<h2>What I Took Away</h2>
+<ul>
+  <li><strong>Report the threshold, not just the score.</strong> An F1 without the contamination value behind it is hard to interpret.</li>
+  <li><strong>Synthetic data flatters models.</strong> Here the fault and normal clusters are well separated. Real sensor drift and noise are much less kind.</li>
+  <li><strong>Pick the operating point by cost.</strong> A missed fault and a false alarm rarely cost the same. The threshold should follow that trade-off, not a benchmark number.</li>
+</ul>
+<p>The natural next step is a real, time-ordered sensor dataset, where temporal context and simple statistical baselines become part of the comparison.</p>
+<p>The code, including a command line for changing the data size and contamination, is on <a href="https://github.com/salamon30/sensor-anomaly-detection" target="_blank" rel="noreferrer">GitHub</a>.</p>
     `.trim(),
   },
   {
     slug: "yolov8-ppe-lessons",
-    title: "What I Learned Training YOLOv8 for PPE Detection",
+    title: "What I Learned Building a YOLOv8 Helmet Detector",
     date: "2026-04-02",
     summary:
-      "Practical lessons from training a real-time helmet detection model: dataset curation, augmentation choices and the gap between mAP and real-world performance.",
+      "From merging two datasets to shipping a FastAPI and Streamlit app: practical lessons from a real-time PPE compliance detector.",
     tags: ["Computer Vision", "YOLOv8", "Deep Learning"],
     readingTime: 5,
     body: `
-<p>For the Machine Learning and Deep Learning course at THD Deggendorf I built a real-time PPE compliance detector — specifically for workers not wearing hard hats on construction sites. The final model hit 92.8% mAP@50. Here is what I wish I had known at the start.</p>
+<p>For the Machine Learning and Deep Learning course at THD Deggendorf, I built a detector that checks whether people on a site are wearing hard hats. The final YOLOv8s model reaches 94.9% mAP@50. These are the lessons that mattered more than the headline number.</p>
 
-<h2>Dataset Quality Beats Model Size</h2>
-<p>I started with YOLOv8m (medium) but switched to YOLOv8s (small) after finding that cleaning mislabelled images improved accuracy more than doubling the parameter count. Spend time on your data before scaling the model.</p>
+<h2>Merging Datasets Is Real Work</h2>
+<p>I combined the Kaggle hard-hat-detection dataset with a Roboflow PPE dataset, for 6,176 images in total. The two sources use different annotation formats, so the Kaggle Pascal VOC XML labels had to be converted to YOLO format and mapped onto the same two classes: <em>Helmet</em> and <em>No_Helmet</em>. A wrong class mapping fails silently, so I spot-checked converted labels before training.</p>
 
-<h2>Augmentation That Actually Helped</h2>
-<p>Standard flips and crops helped, but the biggest gains came from:</p>
+<h2>Training</h2>
+<p>I fine-tuned a pretrained YOLOv8s on a Colab Tesla T4 for 50 epochs. Overall precision is 92.4% and recall is 90.2%.</p>
+<table>
+  <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>mAP50</th></tr></thead>
+  <tbody>
+    <tr><td>Helmet</td><td>93.7%</td><td>92.1%</td><td>96.1%</td></tr>
+    <tr><td>No_Helmet</td><td>91.1%</td><td>88.3%</td><td>93.7%</td></tr>
+  </tbody>
+</table>
+
+<h2>The Class That Matters Is the Harder One</h2>
+<p>For a safety tool, a missed <em>No_Helmet</em> is the expensive error, and that is exactly the class with the lowest recall. An averaged mAP hides this. If I deployed it for real, I would tune the confidence threshold for <em>No_Helmet</em> recall rather than for the overall score.</p>
+
+<h2>A Second Architecture as a Sanity Check</h2>
+<p>I also trained Faster R-CNN with a ResNet50-FPN backbone on the same data, once from COCO-pretrained weights and once from scratch. The comparison was a useful reminder of why one-stage detectors are the default for real-time use, and how much pretrained weights help on a dataset of this size.</p>
+
+<h2>Shipping It</h2>
+<p>A model in a notebook is not a product, so I wrapped it in a FastAPI service and a Streamlit dashboard. It handles photos, uploaded video and a live webcam, and it raises an alarm when compliance drops below 50%. The deployment taught its own lessons:</p>
 <ul>
-  <li><strong>Mosaic augmentation</strong> — combines four images into one, forcing the model to detect small objects in cluttered scenes.</li>
-  <li><strong>Random lighting shifts</strong> — construction sites have harsh shadows. Simulating this during training was critical for outdoor robustness.</li>
-  <li><strong>Perspective transforms</strong> — helmet detection from CCTV cameras is often at steep angles.</li>
+  <li><strong>Video codecs bite.</strong> Annotated videos written by OpenCV did not play in the browser until I re-encoded them with H.264.</li>
+  <li><strong>Tests and CI pay off early.</strong> API tests run in a CI/CD pipeline, so a broken endpoint shows up before a demo, not during one.</li>
+  <li><strong>Free hosting sleeps.</strong> The first request after idle takes about 30 seconds, which is worth telling users up front.</li>
 </ul>
 
-<h2>The mAP vs. Real-World Gap</h2>
-<p>The model scored well on the held-out test set but initially struggled on a live camera feed. The test set images were clean and well-lit; the live feed was lower resolution and motion-blurred. Adding 200 frames captured from the actual camera to the training set closed most of the gap — a reminder that your evaluation set needs to match your deployment environment.</p>
-
-<h2>Inference Speed</h2>
-<p>YOLOv8s runs at ~45 FPS on a laptop GPU and ~12 FPS on CPU — enough for real-time alerting. For edge deployment (Raspberry Pi / Jetson Nano), ONNX export + INT8 quantisation brings CPU inference to ~8 FPS, which is workable for a safety alert system that doesn't need frame-perfect accuracy.</p>
-
-<p>Code and training notebooks are on <a href="https://github.com/salamon30/helmet-detection" target="_blank" rel="noreferrer">GitHub</a>.</p>
+<p>Code, training notebooks and the live demo are on <a href="https://github.com/salamon30/helmet-detection" target="_blank" rel="noreferrer">GitHub</a>.</p>
     `.trim(),
   },
 ];

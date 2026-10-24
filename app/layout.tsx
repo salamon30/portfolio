@@ -8,7 +8,7 @@ import { CommandMenu } from "@/components/CommandMenu";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Analytics } from "@vercel/analytics/react";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://recepulasuzun.com";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -70,7 +70,8 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: SITE_URL,
+    // Relative to metadataBase, so every route gets its own canonical URL.
+    canonical: "./",
   },
 };
 

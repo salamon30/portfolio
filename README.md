@@ -119,7 +119,7 @@ npm run dev
 |---|---|
 | `RESEND_API_KEY` | Contact form email delivery (resend.com — free tier: 3,000/mo) |
 | `CONTACT_TO_EMAIL` | Inbox address for form submissions |
-| `NEXT_PUBLIC_SITE_URL` | Canonical URL used in sitemap and OG tags |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URL for builds outside Vercel. On Vercel the production domain is used automatically |
 
 The site runs fully without these — the contact form falls back to `mailto:`.
 

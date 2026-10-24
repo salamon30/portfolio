@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="pl-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+    </pattern>
+    <radialGradient id="pl-glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="pl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="rgba(255,255,255,0.45)"/>
+    </marker>
+    <marker id="pl-arrow-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#0b0a12"/>
+  <rect width="1200" height="675" fill="url(#pl-grid)"/>
+  <rect width="1200" height="675" fill="url(#pl-glow)"/>
+  <rect width="1200" height="52" fill="rgba(0,0,0,0.6)"/>
+  <text x="40" y="32" font-family="'Inter',Arial,sans-serif" font-size="18" font-weight="600" fill="white" letter-spacing="-0.3">Physical AI Learning Loop</text>
+  <text x="40" y="47" font-family="'Inter',Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.32)" letter-spacing="1">ROBOTICS &amp; AI HACKATHON  ·  ERLANGEN  ·  OCTOBER 2026</text>
+  <text x="600" y="150" text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="15" fill="rgba(255,255,255,0.55)">raw demonstrations in  →  evaluated, reproducible robot policy out</text>
+  <rect x="60" y="210" width="184" height="140" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="80" y="244" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.35)" letter-spacing="1.5">STAGE 01</text>
+  <text x="80" y="286" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Ingest &amp;</text>
+  <text x="80" y="314" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Transform</text>
+  <line x1="250" y1="280.0" x2="278" y2="280.0" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <rect x="284" y="210" width="184" height="140" rx="12" fill="rgba(139,92,246,0.10)" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="304" y="244" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="600" fill="#8b5cf6" letter-spacing="1.5">STAGE 02</text>
+  <text x="304" y="286" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Dataset</text>
+  <text x="304" y="314" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Intelligence</text>
+  <line x1="474" y1="280.0" x2="502" y2="280.0" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <rect x="508" y="210" width="184" height="140" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="528" y="244" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.35)" letter-spacing="1.5">STAGE 03</text>
+  <text x="528" y="286" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Fine-Tune</text>
+  <text x="528" y="314" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">VLA policy</text>
+  <line x1="698" y1="280.0" x2="726" y2="280.0" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <rect x="732" y="210" width="184" height="140" rx="12" fill="rgba(139,92,246,0.10)" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="752" y="244" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="600" fill="#8b5cf6" letter-spacing="1.5">STAGE 04</text>
+  <text x="752" y="286" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Evaluate</text>
+  <text x="752" y="314" font-family="'Inter',Arial,sans-serif" font-size="15" fill="rgba(255,255,255,0.5)">sim + offline</text>
+  <line x1="922" y1="280.0" x2="950" y2="280.0" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <rect x="956" y="210" width="184" height="140" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="976" y="244" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.35)" letter-spacing="1.5">STAGE 05</text>
+  <text x="976" y="286" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Version &amp;</text>
+  <text x="976" y="314" font-family="'Inter',Arial,sans-serif" font-size="21" font-weight="600" fill="white" letter-spacing="-0.3">Serve</text>
+  <path d="M 824.0 358 C 824.0 480, 152.0 480, 152.0 362" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#pl-arrow-v)"/>
+  <rect x="273.0" y="428" width="430" height="44" rx="22" fill="#0b0a12" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="488.0" y="456" text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="15" font-weight="500" fill="white">Option B · capability gaps → targeted new demos</text>
+  <rect x="60" y="600" width="14" height="14" rx="3" fill="rgba(139,92,246,0.25)" stroke="#8b5cf6"/>
+  <text x="84" y="612" font-family="'Inter',Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.55)">my modules: dataset intelligence, evaluation metrics, self-improving loop</text>
+  <text x="1140" y="612" text-anchor="end" font-family="'Inter',Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.35)">LeRobot · Isaac Sim · MLflow</text>
+</svg>

@@ -166,6 +166,36 @@ export const PROJECTS: Project[] = [
 
   /* ──────────── PERSONAL / OPEN-SOURCE ──────────── */
   {
+    slug: "medical-ai-paper-qa",
+    year: "2026",
+    category: "personal",
+    featured: true,
+    titles: {
+      en: "Medical AI Paper QA — Evaluated RAG Pipeline",
+      tr: "Medical AI Paper QA — Değerlendirilmiş RAG Sistemi",
+      de: "Medical AI Paper QA — Evaluierte RAG-Pipeline",
+    },
+    summaries: {
+      en: "Retrieval-augmented question answering over medical-AI research papers: every answer cites the exact passage and page, the system declines instead of guessing, and quality is measured with a retrieval and LLM-as-judge evaluation suite.",
+      tr: "Tıbbi yapay zeka makaleleri üzerinde RAG tabanlı soru-cevap: her cevap kaynak pasajı ve sayfayı gösteriyor, sistem tahmin yürütmek yerine cevap vermeyi reddediyor ve kalite, retrieval ile LLM-as-judge değerlendirmesiyle ölçülüyor.",
+      de: "Retrieval-Augmented Question Answering über Forschungsarbeiten zu medizinischer KI: Jede Antwort zitiert die genaue Textstelle und Seite, das System verweigert statt zu raten, und die Qualität wird mit einer Retrieval- und LLM-as-Judge-Evaluation gemessen.",
+    },
+    descriptions: {
+      en: "An end-to-end RAG system built in four stages, each measured before moving on.\n\nIngestion: PDFs are parsed page by page and split into ~500-token chunks with overlap, counted with the embedding model's own tokenizer, then embedded locally with bge-small and stored in ChromaDB with source and page metadata. Generation: the top retrieved passages go to an LLM (NVIDIA NIM) under strict rules — answer only from the context, cite every claim as [n], and say \"I don't know\" when the context lacks the answer.\n\nEvaluation: a 20-question test set built from the papers measures retrieval (hit@5 0.95, MRR 0.81) and answer quality with an LLM judge (faithfulness 4.8 / 5, correctness 4.0 / 5). The evaluation drove real design changes: switching embedding models after finding the first one silently truncated half of every chunk, keeping the model's reasoning on for generation after it dropped citations without it, and fixing a judge that rated refusals as correct. Failure analysis points to retrieval as the bottleneck, with a reranker as the next measured experiment.\n\nA Streamlit UI shows each answer with expandable, cited sources and the latest evaluation scores.",
+      tr: "Dört aşamada kurulmuş, her aşaması bir sonrakine geçmeden ölçülmüş uçtan uca bir RAG sistemi.\n\nVeri hazırlama: PDF'ler sayfa sayfa okunuyor ve embedding modelinin kendi tokenizer'ıyla sayılan, örtüşmeli ~500 tokenlık parçalara bölünüyor. Ardından bge-small ile yerelde vektöre çevrilip kaynak ve sayfa bilgisiyle ChromaDB'ye kaydediliyor. Cevap üretimi: en ilgili pasajlar katı kurallarla bir LLM'e (NVIDIA NIM) veriliyor. Kurallar şunlar: sadece bağlamdan cevap ver, her iddiayı [n] ile kaynakla ve bağlamda cevap yoksa \"bilmiyorum\" de.\n\nDeğerlendirme: makalelerden hazırlanan 20 soruluk bir test seti, retrieval'ı (hit@5 0,95, MRR 0,81) ve cevap kalitesini bir LLM hakemle (sadakat 4,8 / 5, doğruluk 4,0 / 5) ölçüyor. Değerlendirme gerçek tasarım değişikliklerine yol açtı. İlk embedding modelinin her parçanın yarısını sessizce kestiği görülünce model değiştirildi. Akıl yürütme kapalıyken model atıfları bıraktığı için cevap üretiminde açık tutuldu. Ret cevaplarını doğru sayan hakem düzeltildi. Hata analizi darboğazın retrieval olduğunu gösteriyor. Bir sonraki ölçülecek deney reranker.\n\nStreamlit arayüzü her cevabı açılabilir kaynaklarıyla ve son değerlendirme puanlarıyla birlikte gösteriyor.",
+      de: "Ein End-to-End-RAG-System, in vier Stufen gebaut und jede Stufe gemessen, bevor es weiterging.\n\nIngestion: PDFs werden seitenweise eingelesen und in überlappende Chunks von ca. 500 Tokens zerlegt, gezählt mit dem Tokenizer des Embedding-Modells. Anschließend werden sie lokal mit bge-small eingebettet und mit Quellen- und Seiten-Metadaten in ChromaDB gespeichert. Generierung: Die relevantesten Passagen gehen mit strikten Regeln an ein LLM (NVIDIA NIM): nur aus dem Kontext antworten, jede Aussage mit [n] belegen und \"Ich weiß es nicht\" sagen, wenn der Kontext die Antwort nicht enthält.\n\nEvaluation: Ein aus den Papers erstelltes Testset mit 20 Fragen misst das Retrieval (hit@5 0,95, MRR 0,81) und die Antwortqualität mit einem LLM-Judge (Faithfulness 4,8 / 5, Correctness 4,0 / 5). Die Evaluation führte zu echten Designänderungen: Wechsel des Embedding-Modells, nachdem sich zeigte, dass das erste die Hälfte jedes Chunks stillschweigend abschnitt. Das Reasoning des Modells bleibt bei der Generierung aktiv, weil ohne es die Zitate wegfielen. Außerdem wurde ein Judge korrigiert, der Verweigerungen als korrekt bewertete. Die Fehleranalyse zeigt das Retrieval als Engpass, ein Reranker ist das nächste gemessene Experiment.\n\nEine Streamlit-Oberfläche zeigt jede Antwort mit aufklappbaren, zitierten Quellen und den aktuellen Evaluationswerten.",
+    },
+    tech: ["Python", "ChromaDB", "sentence-transformers", "NVIDIA NIM", "Streamlit", "pypdf"],
+    tags: ["RAG", "LLM Evaluation", "Healthcare AI"],
+    role: {
+      en: "Solo · design, implementation and evaluation",
+      tr: "Bireysel · tasarım, geliştirme ve değerlendirme",
+      de: "Einzelarbeit · Design, Umsetzung und Evaluation",
+    },
+    links: { github: "https://github.com/salamon30/rag-project" },
+    cover: "/projects/medical-ai-paper-qa.png",
+  },
+  {
     slug: "physical-ai-learning-loop",
     year: "2026",
     category: "personal",

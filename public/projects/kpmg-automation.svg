@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="k-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="0.5"/>
+    </pattern>
+    <radialGradient id="k-glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#378ADD" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#378ADD" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="k-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#378ADD"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#090e1a"/>
+  <rect width="1200" height="675" fill="url(#k-grid)"/>
+  <rect width="1200" height="675" fill="url(#k-glow)"/>
+
+  <rect width="1200" height="56" fill="rgba(0,0,0,0.65)"/>
+  <text x="40" y="35" font-family="'Inter',Arial,sans-serif" font-size="18" font-weight="600" fill="white" letter-spacing="-0.3">Data &amp; Automation Pipeline</text>
+  <text x="40" y="50" font-family="'Inter',Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.35)" letter-spacing="1">KPMG TÜRKIYE  ·  DATA &amp; DIGITAL  ·  2024–25</text>
+  <circle cx="1160" cy="28" r="4" fill="#378ADD"/>
+
+  <g font-family="'Inter',Arial,sans-serif">
+    <!-- sources -->
+    <text x="80" y="150" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">SOURCES</text>
+    <g>
+      <rect x="80" y="170" width="220" height="70" rx="10" fill="rgba(55,138,221,0.08)" stroke="rgba(55,138,221,0.45)"/>
+      <text x="100" y="200" font-size="15" font-weight="600" fill="white">ERP exports</text>
+      <text x="100" y="222" font-size="11.5" fill="rgba(255,255,255,0.45)">monthly ledgers, CSV</text>
+      <rect x="80" y="262" width="220" height="70" rx="10" fill="rgba(55,138,221,0.08)" stroke="rgba(55,138,221,0.45)"/>
+      <text x="100" y="292" font-size="15" font-weight="600" fill="white">Excel workbooks</text>
+      <text x="100" y="314" font-size="11.5" fill="rgba(255,255,255,0.45)">manual team trackers</text>
+      <rect x="80" y="354" width="220" height="70" rx="10" fill="rgba(55,138,221,0.08)" stroke="rgba(55,138,221,0.45)"/>
+      <text x="100" y="384" font-size="15" font-weight="600" fill="white">Operational DBs</text>
+      <text x="100" y="406" font-size="11.5" fill="rgba(255,255,255,0.45)">SQL Server tables</text>
+    </g>
+    <!-- connectors -->
+    <g fill="none" stroke="#378ADD" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#k-arr)" opacity="0.8">
+      <path d="M300,205 C350,205 350,297 398,297"/>
+      <path d="M300,297 H398"/>
+      <path d="M300,389 C350,389 350,297 398,297"/>
+      <path d="M640,297 H698"/>
+      <path d="M900,297 H958"/>
+    </g>
+    <!-- automation -->
+    <text x="400" y="150" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">AUTOMATE</text>
+    <rect x="400" y="232" width="240" height="130" rx="12" fill="rgba(96,165,250,0.12)" stroke="#60a5fa"/>
+    <text x="420" y="266" font-size="16" font-weight="600" fill="white">Python + SQL jobs</text>
+    <text x="420" y="292" font-size="12" fill="rgba(255,255,255,0.55)">clean · join · validate</text>
+    <text x="420" y="314" font-size="12" fill="rgba(255,255,255,0.55)">scheduled refresh</text>
+    <rect x="420" y="330" width="96" height="20" rx="10" fill="rgba(16,185,129,0.15)"/>
+    <text x="432" y="344" font-size="10.5" fill="#34d399">checks passed</text>
+    <!-- model -->
+    <text x="700" y="150" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">MODEL</text>
+    <rect x="700" y="232" width="200" height="130" rx="12" fill="rgba(55,138,221,0.08)" stroke="rgba(55,138,221,0.45)"/>
+    <text x="720" y="266" font-size="16" font-weight="600" fill="white">Data model</text>
+    <g fill="rgba(255,255,255,0.12)">
+      <rect x="720" y="284" width="70" height="26" rx="4"/><rect x="810" y="284" width="70" height="26" rx="4"/>
+      <rect x="765" y="322" width="70" height="26" rx="4"/>
+    </g>
+    <g font-size="10" fill="rgba(255,255,255,0.6)"><text x="731" y="301">fact_kpi</text><text x="822" y="301">dim_unit</text><text x="774" y="339">dim_date</text></g>
+    <!-- report -->
+    <text x="960" y="150" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="1.5">REPORT</text>
+    <rect x="960" y="210" width="190" height="174" rx="12" fill="rgba(55,138,221,0.08)" stroke="rgba(55,138,221,0.45)"/>
+    <text x="978" y="240" font-size="15" font-weight="600" fill="white">Power BI</text>
+    <g fill="#378ADD">
+      <rect x="980" y="330" width="20" height="36" rx="2" opacity="0.5"/><rect x="1008" y="314" width="20" height="52" rx="2" opacity="0.65"/>
+      <rect x="1036" y="296" width="20" height="70" rx="2" opacity="0.8"/><rect x="1064" y="286" width="20" height="80" rx="2"/>
+      <rect x="1092" y="270" width="20" height="96" rx="2" fill="#60a5fa"/>
+    </g>
+    <text x="978" y="262" font-size="11" fill="rgba(255,255,255,0.45)">weekly KPI view</text>
+  </g>
+
+  <g font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(255,255,255,0.55)">
+    <rect x="80" y="520" width="56" height="26" rx="6" fill="none" stroke="rgba(255,255,255,0.15)"/><text x="94" y="537">SQL</text>
+    <rect x="146" y="520" width="78" height="26" rx="6" fill="none" stroke="rgba(255,255,255,0.15)"/><text x="160" y="537">Python</text>
+    <rect x="234" y="520" width="92" height="26" rx="6" fill="none" stroke="rgba(255,255,255,0.15)"/><text x="248" y="537">Power BI</text>
+    <rect x="336" y="520" width="70" height="26" rx="6" fill="none" stroke="rgba(255,255,255,0.15)"/><text x="350" y="537">Agile</text>
+  </g>
+  <text x="1120" y="640" text-anchor="end" font-family="'Inter',Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Illustrative · client work is confidential</text>
+</svg>

@@ -231,12 +231,13 @@ function LogosStrip() {
     "Python",
     "PyTorch",
     "YOLOv8",
+    "LLMs",
+    "RAG",
+    "FastAPI",
+    "Docker",
     "SQL",
-    "Tableau",
-    "Power BI",
     "C++",
     "TypeScript",
-    "MATLAB",
     "Edge AI",
   ];
   return (

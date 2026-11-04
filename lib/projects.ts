@@ -35,6 +35,8 @@ export type Project = {
   links?: { github?: string; demo?: string; paper?: string; api?: string };
   cover?: string;                            // "/projects/<slug>.jpg"
   role?: Record<Locale, string>;             // "Lead dev", "Team of 3" gibi
+  highlights?: { value: string; label: Record<Locale, string> }[]; // detay sayfasında sonuç kutuları
+  media?: string;                            // detay sayfasında kapak yerine gösterilir (ör. demo GIF)
 };
 
 export const CATEGORY_COLORS: Record<ProjectCategory, string> = {
@@ -80,7 +82,6 @@ export const PROJECTS: Project[] = [
     slug: "vodafone-kpi-dashboard",
     year: "2025",
     category: "work",
-    featured: true,
     titles: {
       en: "Broadband KPI Analytics @ Vodafone",
       tr: "Vodafone'da Geniş Bant KPI Analitiği",
@@ -126,6 +127,7 @@ export const PROJECTS: Project[] = [
       tr: "Veri Analisti & Dijital Trainee · İstanbul",
       de: "Data Analyst & Digital Trainee · Istanbul",
     },
+    cover: "/projects/kpmg-automation.svg",
   },
 
   /* ──────────── M.ENG. COURSEWORK ──────────── */
@@ -194,12 +196,18 @@ export const PROJECTS: Project[] = [
     },
     links: { github: "https://github.com/salamon30/rag-project" },
     cover: "/projects/medical-ai-paper-qa.png",
+    media: "/projects/medical-ai-paper-qa/demo.gif",
+    highlights: [
+      { value: "0.45 → 0.90", label: { en: "Right page in top 5, after adding the reranker", tr: "Doğru sayfa ilk 5'te, reranker eklenince", de: "Richtige Seite in den Top 5, nach dem Reranker" } },
+      { value: "4.5 / 5", label: { en: "Answer correctness on unseen held-out questions", tr: "Görülmemiş sorularda cevap doğruluğu", de: "Antwortkorrektheit bei ungesehenen Held-out-Fragen" } },
+      { value: "60", label: { en: "Hand-checked test questions in 3 sets", tr: "3 sette elle kontrol edilmiş test sorusu", de: "Handgeprüfte Testfragen in 3 Sets" } },
+      { value: "72", label: { en: "Offline unit tests in CI", tr: "CI'da çevrimdışı birim testi", de: "Offline-Unit-Tests in CI" } },
+    ],
   },
   {
     slug: "physical-ai-learning-loop",
     year: "2026",
     category: "personal",
-    featured: true,
     titles: {
       en: "Physical AI Learning Loop — Siemens Healthineers Hackathon",
       tr: "Fiziksel YZ Öğrenme Döngüsü — Siemens Healthineers Hackathon",
@@ -256,7 +264,6 @@ export const PROJECTS: Project[] = [
     slug: "sensor-anomaly-detection",
     year: "2026",
     category: "personal",
-    featured: true,
     titles: {
       en: "Sensor Anomaly Detection",
       tr: "Sensör Anomali Tespiti",
@@ -288,7 +295,6 @@ export const PROJECTS: Project[] = [
     slug: "cool-cooling",
     year: "2025",
     category: "uni",
-    featured: true,
     titles: {
       en: "Cooling-System Digital Twin — B.Sc. Thesis",
       tr: "Soğutma Sistemi Dijital İkizi — Lisans Bitirme Tezi",
@@ -345,5 +351,6 @@ export const PROJECTS: Project[] = [
       de: "Von Grund auf entwickelt",
     },
     links: { github: "https://github.com/salamon30/portfolio" },
+    cover: "/projects/personal-portfolio.png",
   },
 ];

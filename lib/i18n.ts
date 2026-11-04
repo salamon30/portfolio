@@ -168,11 +168,11 @@ const en: Dict = {
     now: "Now",
   },
   hero: {
-    status: "Bavaria · Edge AI & CV Engineer · Seeking Werkstudent — available now",
-    title1: "Turning sensor data",
-    title2: "into intelligent decisions.",
+    status: "Bavaria · Computer Vision & LLM Engineer · Seeking Werkstudent — available now",
+    title1: "Building AI that works,",
+    title2: "and proving it does.",
     description:
-      "M.Eng. AI for Smart Sensors & Actuators at THD Deggendorf. Specialising in computer vision and edge AI — from training detection models to deploying them in Docker containers on cloud infrastructure. Previously at Vodafone Türkiye and KPMG.",
+      "M.Eng. AI for Smart Sensors & Actuators at THD Deggendorf. I build computer vision and LLM systems end to end, from YOLO detectors deployed in Docker to retrieval-augmented question answering with cited sources, and I evaluate each step with test sets before calling it done. Previously at Vodafone Türkiye and KPMG.",
     ctaPrimary: "Read my background",
     ctaSecondary: "Get in touch",
     ctaCv: "Download CV",
@@ -194,6 +194,14 @@ const en: Dict = {
     all: "View full timeline",
     allProjects: "View all projects",
     items: [
+      {
+        kicker: "LLM · RAG · Evaluation",
+        title: "Medical AI Paper QA · Evaluated RAG",
+        summary:
+          "Answers questions about 10 research papers, citing the exact passage and page, or says \"I don't know\". A cross-encoder reranker doubled right-page retrieval, and a held-out test set showed where the system still fails.",
+        metric: "0.45 → 0.90 right page · 72 tests in CI",
+        href: "/projects/medical-ai-paper-qa",
+      },
       {
         kicker: "THD × THI × Fraunhofer IVI",
         title: "Project Ariel — Low-Altitude Aerial Detection",
@@ -217,14 +225,6 @@ const en: Dict = {
           "KPI and performance analytics across Mobile and Fixed Broadband. Reporting built in SQL, DBeaver, and Tableau and used in weekly senior-management reviews.",
         metric: "2025 · Istanbul",
         href: "/projects/vodafone-kpi-dashboard",
-      },
-      {
-        kicker: "KPMG Türkiye",
-        title: "Data Analyst & Digital Trainee",
-        summary:
-          "Data, analytics and automation engagements supporting clients' operating-model and reporting transformations.",
-        metric: "2024–25 · Istanbul",
-        href: "/journey",
       },
     ],
   },
@@ -487,11 +487,11 @@ const tr: Dict = {
     now: "Şu An",
   },
   hero: {
-    status: "Bavyera · Edge AI & Bilgisayar Görüsü Mühendisi · Werkstudent arıyorum — hemen başlarım",
-    title1: "Sensör verisini",
-    title2: "akıllı kararlara dönüştürmek.",
+    status: "Bavyera · Bilgisayar Görüsü & LLM Mühendisi · Werkstudent arıyorum — hemen başlarım",
+    title1: "Yapay zekâ kuruyorum,",
+    title2: "çalıştığını ölçerek kanıtlıyorum.",
     description:
-      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı. Bilgisayar görüsü ve edge AI'da uzmanlaşıyorum — tespit modellerini eğitmekten Docker container'larında deploy etmeye kadar. Daha önce Vodafone Türkiye ve KPMG'de çalıştım.",
+      "THD Deggendorf'ta Akıllı Sensörler ve Aktüatörler için Yapay Zekâ yüksek lisansı. Docker ile deploy edilen YOLO dedektörlerinden kaynak gösteren RAG soru-cevap sistemlerine kadar bilgisayar görüsü ve LLM sistemlerini uçtan uca kuruyorum ve her adımı bitti demeden önce test setleriyle ölçüyorum. Önceden Vodafone Türkiye ve KPMG'de.",
     ctaPrimary: "Geçmişimi incele",
     ctaSecondary: "İletişime geç",
     ctaCv: "CV'yi indir",
@@ -513,6 +513,14 @@ const tr: Dict = {
     all: "Tüm zaman çizelgesi",
     allProjects: "Tüm projeleri gör",
     items: [
+      {
+        kicker: "LLM · RAG · Değerlendirme",
+        title: "Medical AI Paper QA · Ölçülmüş RAG",
+        summary:
+          "10 araştırma makalesi hakkındaki soruları kaynak pasajı ve sayfayı göstererek cevaplıyor, cevap yoksa \"bilmiyorum\" diyor. Bir cross-encoder reranker doğru sayfayı bulma oranını ikiye katladı, görülmemiş sorulardan oluşan bir test seti de sistemin hâlâ nerede zorlandığını gösterdi.",
+        metric: "Doğru sayfa 0,45 → 0,90 · CI'da 72 test",
+        href: "/projects/medical-ai-paper-qa",
+      },
       {
         kicker: "THD × THI × Fraunhofer IVI",
         title: "Proje Ariel — Alçak İrtifa Hava Tespiti",
@@ -536,14 +544,6 @@ const tr: Dict = {
           "Mobil ve Sabit Geniş Bant segmentlerinde KPI ve performans analitiği. SQL, DBeaver ve Tableau ile geliştirilen, haftalık üst yönetim toplantılarında kullanılan raporlar.",
         metric: "2025 · İstanbul",
         href: "/projects/vodafone-kpi-dashboard",
-      },
-      {
-        kicker: "KPMG Türkiye",
-        title: "Veri Analisti & Dijital Trainee",
-        summary:
-          "Müşterilerin operasyon modeli ve raporlama dönüşümlerini destekleyen veri, analitik ve otomasyon projeleri.",
-        metric: "2024–25 · İstanbul",
-        href: "/journey",
       },
     ],
   },
@@ -806,11 +806,11 @@ const de: Dict = {
     now: "Jetzt",
   },
   hero: {
-    status: "Bayern · Edge-AI- & CV-Ingenieur · Suche Werkstudentenstelle — sofort verfügbar",
-    title1: "Sensordaten in",
-    title2: "intelligente Entscheidungen.",
+    status: "Bayern · Computer-Vision- & LLM-Ingenieur · Suche Werkstudentenstelle — sofort verfügbar",
+    title1: "KI, die funktioniert,",
+    title2: "und das nachweislich.",
     description:
-      "M.Eng. KI für intelligente Sensoren & Aktoren an der THD Deggendorf. Spezialisierung auf Computer Vision und Edge AI — vom Training von Detektionsmodellen bis zur Containerisierung und Bereitstellung in der Cloud. Zuvor bei Vodafone Türkei und KPMG.",
+      "M.Eng. KI für intelligente Sensoren & Aktoren an der THD Deggendorf. Ich baue Computer-Vision- und LLM-Systeme von Anfang bis Ende, von YOLO-Detektoren in Docker bis zu Retrieval-Augmented Question Answering mit Quellenangaben, und prüfe jeden Schritt mit Testsets, bevor ich ihn fertig nenne. Zuvor bei Vodafone Türkei und KPMG.",
     ctaPrimary: "Werdegang ansehen",
     ctaSecondary: "Kontakt aufnehmen",
     ctaCv: "Lebenslauf herunterladen",
@@ -832,6 +832,14 @@ const de: Dict = {
     all: "Vollständigen Werdegang",
     allProjects: "Alle Projekte ansehen",
     items: [
+      {
+        kicker: "LLM · RAG · Evaluation",
+        title: "Medical AI Paper QA · Evaluierte RAG-Pipeline",
+        summary:
+          "Beantwortet Fragen zu 10 Forschungsarbeiten mit genauer Textstelle und Seite oder sagt \"Ich weiß es nicht\". Ein Cross-Encoder-Reranker verdoppelte die Trefferquote der richtigen Seite, und ein Held-out-Testset zeigte, wo das System noch scheitert.",
+        metric: "Richtige Seite 0,45 → 0,90 · 72 Tests in CI",
+        href: "/projects/medical-ai-paper-qa",
+      },
       {
         kicker: "THD × THI × Fraunhofer IVI",
         title: "Projekt Ariel — Niedrigflug-Objekterkennung",
@@ -855,14 +863,6 @@ const de: Dict = {
           "KPI- und Performance-Analytik für Mobil- und Festnetzbreitband. Reporting in SQL, DBeaver und Tableau, eingesetzt in den wöchentlichen Senior-Management-Reviews.",
         metric: "2025 · Istanbul",
         href: "/projects/vodafone-kpi-dashboard",
-      },
-      {
-        kicker: "KPMG Türkei",
-        title: "Data Analyst & Digital Trainee",
-        summary:
-          "Daten-, Analytics- und Automatisierungsprojekte zur Unterstützung der Betriebsmodell- und Reporting-Transformationen von Kunden.",
-        metric: "2024–25 · Istanbul",
-        href: "/journey",
       },
     ],
   },

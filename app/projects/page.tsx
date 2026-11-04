@@ -331,7 +331,7 @@ function ProjectLink({
   children: React.ReactNode;
 }) {
   return (
-    <Link
+    <a
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -339,7 +339,7 @@ function ProjectLink({
     >
       <LinkIcon kind={icon} />
       {children}
-    </Link>
+    </a>
   );
 }
 

@@ -13,16 +13,18 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
+    default: "Recep Ulaş Uzun — Computer Vision & LLM Engineer",
     template: "%s · Recep Ulaş Uzun",
   },
   description:
-    "Edge AI and computer vision engineer — M.Eng. in AI for Smart Sensors and Actuators at THD Deggendorf. From training detection models to deploying them in production. Previously at Vodafone Türkiye and KPMG. Based in Bavaria.",
+    "Computer vision and LLM engineer — M.Eng. in AI for Smart Sensors and Actuators at THD Deggendorf. Builds and evaluates detection models and RAG systems, from training to production. Previously at Vodafone Türkiye and KPMG. Based in Bavaria.",
   keywords: [
     "Recep Uzun",
     "Recep Ulaş Uzun",
     "Edge AI",
     "Computer Vision",
+    "LLM",
+    "RAG",
     "Machine Learning",
     "YOLOv8",
     "Smart Sensors",
@@ -40,23 +42,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Recep Ulaş Uzun",
-    title: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
+    title: "Recep Ulaş Uzun — Computer Vision & LLM Engineer",
     description:
-      "Edge AI & computer vision engineer · M.Eng. AI for Smart Sensors and Actuators at THD Deggendorf · Previously at Vodafone Türkiye and KPMG.",
+      "Computer vision & LLM engineer · M.Eng. AI for Smart Sensors and Actuators at THD Deggendorf · Previously at Vodafone Türkiye and KPMG.",
     images: [
       {
         url: "/preview.png",
         width: 1200,
         height: 630,
-        alt: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
+        alt: "Recep Ulaş Uzun — Computer Vision & LLM Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Recep Ulaş Uzun — Edge AI & Computer Vision Engineer",
+    title: "Recep Ulaş Uzun — Computer Vision & LLM Engineer",
     description:
-      "Edge AI & computer vision engineer · M.Eng. AI for Smart Sensors and Actuators at THD Deggendorf · Previously at Vodafone Türkiye and KPMG.",
+      "Computer vision & LLM engineer · M.Eng. AI for Smart Sensors and Actuators at THD Deggendorf · Previously at Vodafone Türkiye and KPMG.",
     images: ["/preview.png"],
   },
   robots: {
@@ -103,9 +105,9 @@ export default function RootLayout({
               name: "Recep Ulaş Uzun",
               url: SITE_URL,
               image: `${SITE_URL}/me/avatar.png`,
-              jobTitle: "Edge AI & Computer Vision Engineer — M.Eng. AI for Smart Sensors & Actuators",
+              jobTitle: "Computer Vision & LLM Engineer — M.Eng. AI for Smart Sensors & Actuators",
               description:
-                "Edge AI and computer vision engineer pursuing a Master's in AI for Smart Sensors and Actuators at THD Deggendorf. Previously in applied analytics at Vodafone Türkiye and KPMG.",
+                "Computer vision and LLM engineer pursuing a Master's in AI for Smart Sensors and Actuators at THD Deggendorf. Previously in applied analytics at Vodafone Türkiye and KPMG.",
               worksFor: {
                 "@type": "CollegeOrUniversity",
                 name: "Technische Hochschule Deggendorf",

@@ -71,12 +71,31 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
             <p className="mt-2 text-sm text-faint">{project.role[locale]}</p>
           )}
 
-          {/* Cover */}
-          {project.cover && (
+          {/* Results */}
+          {project.highlights && project.highlights.length > 0 && (
+            <dl className="mt-8 grid grid-cols-2 overflow-hidden rounded-2xl border border-default md:grid-cols-4">
+              {project.highlights.map((h, i) => (
+                <div
+                  key={h.value + i}
+                  className={`flex flex-col gap-1 px-4 py-5 ${i % 2 === 1 ? "border-l border-default" : ""} ${
+                    i >= 2 ? "border-t border-default md:border-t-0" : ""
+                  } ${i >= 1 ? "md:border-l" : ""}`}
+                >
+                  <dt className="order-2 text-xs leading-snug text-faint">{h.label[locale]}</dt>
+                  <dd className="num order-1 whitespace-nowrap text-xl font-semibold tracking-tight" style={{ color }}>
+                    {h.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
+
+          {/* Cover, or a demo recording when there is one */}
+          {(project.media ?? project.cover) && (
             <div className="mt-8 overflow-hidden rounded-2xl border border-default bg-subtle">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={project.cover}
+                src={project.media ?? project.cover}
                 alt={project.titles.en}
                 className="w-full object-cover"
               />

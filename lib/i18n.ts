@@ -207,7 +207,7 @@ const en: Dict = {
         title: "Medical AI Paper QA · Evaluated RAG",
         summary:
           "Answers questions about 10 research papers, citing the exact passage and page, or says \"I don't know\". A cross-encoder reranker doubled right-page retrieval, and a held-out test set showed where the system still fails.",
-        metric: "0.45 → 0.90 right page · 72 tests in CI",
+        metric: "0.45 → 0.90 right page · live demo",
         href: "/projects/medical-ai-paper-qa",
       },
       {
@@ -542,7 +542,7 @@ const tr: Dict = {
         title: "Medical AI Paper QA · Ölçülmüş RAG",
         summary:
           "10 araştırma makalesi hakkındaki soruları kaynak pasajı ve sayfayı göstererek cevaplıyor, cevap yoksa \"bilmiyorum\" diyor. Bir cross-encoder reranker doğru sayfayı bulma oranını ikiye katladı, görülmemiş sorulardan oluşan bir test seti de sistemin hâlâ nerede zorlandığını gösterdi.",
-        metric: "Doğru sayfa 0,45 → 0,90 · CI'da 72 test",
+        metric: "Doğru sayfa 0,45 → 0,90 · canlı demo",
         href: "/projects/medical-ai-paper-qa",
       },
       {
@@ -877,7 +877,7 @@ const de: Dict = {
         title: "Medical AI Paper QA · Evaluierte RAG-Pipeline",
         summary:
           "Beantwortet Fragen zu 10 Forschungsarbeiten mit genauer Textstelle und Seite oder sagt \"Ich weiß es nicht\". Ein Cross-Encoder-Reranker verdoppelte die Trefferquote der richtigen Seite, und ein Held-out-Testset zeigte, wo das System noch scheitert.",
-        metric: "Richtige Seite 0,45 → 0,90 · 72 Tests in CI",
+        metric: "Richtige Seite 0,45 → 0,90 · Live-Demo",
         href: "/projects/medical-ai-paper-qa",
       },
       {

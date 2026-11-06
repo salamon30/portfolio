@@ -146,3 +146,27 @@
   .prose-custom td    { @apply text-muted border-b border-default py-2 pr-6 whitespace-nowrap; }
   .prose-custom strong { @apply font-semibold text-[var(--fg)]; }
 }
+
+/* ---------- motion utilities ---------- */
+@keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.marquee { mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+.marquee-track { display: flex; width: max-content; animation: marquee-left 40s linear infinite; }
+.marquee-track.reverse { animation-name: marquee-right; animation-duration: 46s; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* soft light that follows the cursor over a card (set --mx / --my from JS) */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+  opacity: 0; transition: opacity 300ms ease;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%),
+              color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%);
+}
+.spotlight:hover::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
+  .marquee-track [data-dup] { display: none; }
+  .marquee { mask-image: none; }
+}

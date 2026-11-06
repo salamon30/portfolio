@@ -7,6 +7,9 @@ import { useT } from "@/lib/i18n";
 import { PROFILE_AVATAR, TENNIS_PHOTOS } from "@/lib/media";
 import { SOCIALS, socialHref } from "@/lib/socials";
 import NeuralNetworkBg from "@/components/NeuralNetworkBg";
+import HowIWork from "@/components/HowIWork";
+import CountUp from "@/components/CountUp";
+import { PROJECTS } from "@/lib/projects";
 
 const container = {
   hidden: { opacity: 0 },
@@ -31,6 +34,7 @@ export default function HomePage() {
       <Hero />
       <LogosStrip />
       <SelectedWork />
+      <HowIWork />
       <OffCourt />
       <Footer />
     </>
@@ -214,7 +218,7 @@ function MetricsRow() {
             className="num text-3xl font-semibold tracking-tight md:text-4xl"
             style={{ color: m.color }}
           >
-            {m.value}
+            <CountUp value={m.value} />
           </span>
           <span className="text-xs text-faint md:text-sm">{m.label}</span>
         </div>
@@ -227,33 +231,33 @@ function MetricsRow() {
 
 function LogosStrip() {
   const { t } = useT();
-  const items = [
-    "Python",
-    "PyTorch",
-    "YOLOv8",
-    "LLMs",
-    "RAG",
-    "FastAPI",
-    "Docker",
-    "SQL",
-    "C++",
-    "TypeScript",
-    "Edge AI",
+  const rows = [
+    ["Python", "PyTorch", "YOLOv8", "OpenCV", "scikit-learn", "Edge AI", "C++", "CVAT", "MATLAB"],
+    ["LLMs", "RAG", "ChromaDB", "Whisper", "NVIDIA NIM", "FastAPI", "Docker", "GitHub Actions", "SQL", "TypeScript"],
   ];
   return (
     <section className="border-y border-default bg-subtle">
-      <div className="container-page py-10">
+      <div className="py-10">
         <p className="mb-6 text-center text-xs uppercase tracking-[0.18em] text-faint">
           {t.stack.title}
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-          {items.map((label) => (
-            <span
-              key={label}
-              className="num text-sm font-medium text-muted transition-colors hover:text-[var(--accent)]"
-            >
-              {label}
-            </span>
+        <div className="space-y-4">
+          {rows.map((row, r) => (
+            <div key={r} className="marquee overflow-hidden">
+              <div className={`marquee-track ${r === 1 ? "reverse" : ""}`}>
+                {[...row, ...row].map((label, i) => (
+                  <span
+                    key={`${label}-${i}`}
+                    data-dup={i >= row.length ? "" : undefined}
+                    aria-hidden={i >= row.length || undefined}
+                    className="num mx-3 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-default bg-[var(--bg)] px-4 py-1.5 text-sm font-medium text-muted transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: r === 0 ? "var(--accent)" : "var(--accent-2)" }} />
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -262,6 +266,12 @@ function LogosStrip() {
 }
 
 /* ------------------------- SELECTED WORK ------------------------- */
+
+/** Cover image of the project a featured card links to, if it has one. */
+function coverFor(href?: string) {
+  const slug = href?.split("/projects/")[1];
+  return PROJECTS.find((p) => p.slug === slug)?.cover;
+}
 
 function SelectedWork() {
   const { t } = useT();
@@ -299,26 +309,45 @@ function SelectedWork() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="card group relative flex flex-col p-6 transition-shadow hover:shadow-cardHover cursor-pointer"
+            onMouseMove={(e) => {
+              const r = e.currentTarget.getBoundingClientRect();
+              e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
+              e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
+            }}
+            className="card spotlight group relative flex cursor-pointer flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-cardHover"
           >
             <Link
               href={p.href ?? "/projects"}
-              className="absolute inset-0 z-[1] rounded-[inherit]"
+              className="absolute inset-0 z-[3] rounded-[inherit]"
               aria-label={p.title}
             />
-            <span className="text-[11px] uppercase tracking-[0.16em] text-faint">
-              {p.kicker}
-            </span>
-            <h3 className="mt-2 text-lg font-semibold tracking-tight">
-              {p.title}
-            </h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-              {p.summary}
-            </p>
-            <div className="mt-5 flex items-center justify-between border-t border-default pt-4">
-              <span className="num text-xs font-medium text-[var(--accent)]">
-                {p.metric}
+            {coverFor(p.href) && (
+              <div className="relative z-[1] aspect-[16/8] overflow-hidden border-b border-default bg-subtle">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={coverFor(p.href)}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+              </div>
+            )}
+            <div className="relative z-[1] flex flex-1 flex-col p-6">
+              <span className="text-[11px] uppercase tracking-[0.16em] text-faint">
+                {p.kicker}
               </span>
+              <h3 className="mt-2 text-lg font-semibold tracking-tight">
+                {p.title}
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                {p.summary}
+              </p>
+              <div className="mt-5 flex items-center justify-between border-t border-default pt-4">
+                <span className="num text-xs font-medium text-[var(--accent)]">
+                  {p.metric}
+                </span>
+                <span aria-hidden className="text-sm text-faint transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)]">→</span>
+              </div>
             </div>
           </motion.article>
         ))}

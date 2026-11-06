@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import { PageTransition } from "@/components/PageTransition";
 import { CommandMenu } from "@/components/CommandMenu";
 import { MotionProvider } from "@/components/MotionProvider";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Analytics } from "@vercel/analytics/react";
 
 import { SITE_URL } from "@/lib/site";
@@ -132,6 +133,7 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <LanguageProvider>
           <MotionProvider>
+            <ScrollProgress />
             <NavBar />
             <CommandMenu />
             <main className="pt-16">

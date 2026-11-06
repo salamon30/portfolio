@@ -195,6 +195,14 @@ const en: Dict = {
     allProjects: "View all projects",
     items: [
       {
+        kicker: "LLM · Speech · Evaluation",
+        title: "In-Car Voice Assistant · Multi-Fidelity Evaluation",
+        summary:
+          "An LLM car assistant tested with clean text, simulated speech-recognition errors and real speech with cabin noise. 270 recorded runs and a budget simulation show which bugs each level finds and when cheap screening pays off.",
+        metric: "Text tests catch 1 of 20 real bugs · 2.2× more found by screening",
+        href: "/projects/car-assistant-eval",
+      },
+      {
         kicker: "LLM · RAG · Evaluation",
         title: "Medical AI Paper QA · Evaluated RAG",
         summary:
@@ -225,6 +233,14 @@ const en: Dict = {
           "KPI and performance analytics across Mobile and Fixed Broadband. Reporting built in SQL, DBeaver, and Tableau and used in weekly senior-management reviews.",
         metric: "2025 · Istanbul",
         href: "/projects/vodafone-kpi-dashboard",
+      },
+      {
+        kicker: "LLM Agent · Full-Stack",
+        title: "Fin-Agent · Personal Finance Dashboard",
+        summary:
+          "FastAPI + React finance dashboard with a tool-calling LLM agent. The agent can only propose changes to financial records; a separate confirmation step with no tool behind it performs them. In daily use.",
+        metric: "~15 agent tools · human-in-the-loop writes",
+        href: "/projects/fin-agent-intelligence",
       },
     ],
   },
@@ -514,6 +530,14 @@ const tr: Dict = {
     allProjects: "Tüm projeleri gör",
     items: [
       {
+        kicker: "LLM · Ses · Değerlendirme",
+        title: "Araç İçi Sesli Asistan · Çok Seviyeli Değerlendirme",
+        summary:
+          "Bir LLM araç asistanı temiz metin, taklit ses tanıma hataları ve araç içi gürültülü gerçek konuşmayla test edildi. 270 kayıtlı çalıştırma ve bir bütçe simülasyonu, her seviyenin hangi hataları bulduğunu ve ucuz ön elemenin ne zaman işe yaradığını gösteriyor.",
+        metric: "Metin testleri 20 hatanın 1'ini buluyor · ön elemeyle 2,2× fazla",
+        href: "/projects/car-assistant-eval",
+      },
+      {
         kicker: "LLM · RAG · Değerlendirme",
         title: "Medical AI Paper QA · Ölçülmüş RAG",
         summary:
@@ -544,6 +568,14 @@ const tr: Dict = {
           "Mobil ve Sabit Geniş Bant segmentlerinde KPI ve performans analitiği. SQL, DBeaver ve Tableau ile geliştirilen, haftalık üst yönetim toplantılarında kullanılan raporlar.",
         metric: "2025 · İstanbul",
         href: "/projects/vodafone-kpi-dashboard",
+      },
+      {
+        kicker: "LLM Ajanı · Full-Stack",
+        title: "Fin-Agent · Kişisel Finans Panosu",
+        summary:
+          "Tool-calling LLM ajanlı FastAPI + React finans panosu. Ajan finansal kayıtlarda sadece değişiklik önerebiliyor; değişikliği, arkasında hiçbir araç olmayan ayrı bir onay adımı yapıyor. Her gün kullanılıyor.",
+        metric: "~15 ajan aracı · insan onaylı yazma",
+        href: "/projects/fin-agent-intelligence",
       },
     ],
   },
@@ -833,6 +865,14 @@ const de: Dict = {
     allProjects: "Alle Projekte ansehen",
     items: [
       {
+        kicker: "LLM · Sprache · Evaluation",
+        title: "Sprachassistent im Auto · Multi-Fidelity-Evaluation",
+        summary:
+          "Ein LLM-Autoassistent, getestet mit sauberem Text, simulierten Spracherkennungsfehlern und echter Sprache mit Innenraumgeräusch. 270 aufgezeichnete Läufe und eine Budget-Simulation zeigen, welche Fehler jede Stufe findet und wann günstiges Vorfiltern sich lohnt.",
+        metric: "Texttests finden 1 von 20 echten Fehlern · 2,2× mehr mit Vorfiltern",
+        href: "/projects/car-assistant-eval",
+      },
+      {
         kicker: "LLM · RAG · Evaluation",
         title: "Medical AI Paper QA · Evaluierte RAG-Pipeline",
         summary:
@@ -863,6 +903,14 @@ const de: Dict = {
           "KPI- und Performance-Analytik für Mobil- und Festnetzbreitband. Reporting in SQL, DBeaver und Tableau, eingesetzt in den wöchentlichen Senior-Management-Reviews.",
         metric: "2025 · Istanbul",
         href: "/projects/vodafone-kpi-dashboard",
+      },
+      {
+        kicker: "LLM-Agent · Full-Stack",
+        title: "Fin-Agent · Persönliches Finanz-Dashboard",
+        summary:
+          "FastAPI- + React-Finanz-Dashboard mit einem Tool-Calling-LLM-Agenten. Der Agent kann Änderungen an Finanzdaten nur vorschlagen; ein separater Bestätigungsschritt ohne zugehöriges Tool führt sie aus. Im täglichen Einsatz.",
+        metric: "~15 Agent-Tools · Schreiben nur nach Bestätigung",
+        href: "/projects/fin-agent-intelligence",
       },
     ],
   },

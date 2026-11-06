@@ -13,7 +13,7 @@
  *   5) links → varsa GitHub / demo / paper URL'leri.
  *   6) cover → /public/projects/<slug>.jpg veya benzeri. İstersen boş bırak,
  *       kart otomatik gradient kapak üretir.
- *   7) featured: true → karta "Öne çıkan" vurgusu gelir. 3 proje featured tut.
+ *   7) featured: true → karta "Öne çıkan" vurgusu gelir. 4 proje featured tut.
  *
  * Kategori renkleri: uni=yeşil, work=mavi, personal=mor, research=amber.
  */
@@ -167,6 +167,43 @@ export const PROJECTS: Project[] = [
   },
 
   /* ──────────── PERSONAL / OPEN-SOURCE ──────────── */
+  {
+    slug: "car-assistant-eval",
+    year: "2026",
+    category: "personal",
+    featured: true,
+    titles: {
+      en: "In-Car Voice Assistant — Multi-Fidelity Evaluation",
+      tr: "Araç İçi Sesli Asistan — Çok Seviyeli Değerlendirme",
+      de: "Sprachassistent im Auto — Multi-Fidelity-Evaluation",
+    },
+    summaries: {
+      en: "An LLM car assistant tested at three levels of realism: clean text, simulated speech-recognition errors, and real speech with cabin noise transcribed by Whisper. 270 recorded runs show that text tests catch 1 of 20 real bugs, and a budget simulation shows when cheap screening is worth it.",
+      tr: "Bir LLM araç asistanı üç gerçekçilik seviyesinde test edildi: temiz metin, taklit edilmiş ses tanıma hataları ve araç içi gürültüyle gerçek konuşmanın Whisper ile yazıya çevrilmesi. Kaydedilen 270 çalıştırma, metin testlerinin 20 gerçek hatadan sadece 1'ini yakaladığını; bütçe simülasyonu da ucuz ön elemenin ne zaman işe yaradığını gösteriyor.",
+      de: "Ein LLM-Autoassistent, getestet auf drei Realismusstufen: sauberer Text, simulierte Spracherkennungsfehler und echte Sprache mit Innenraumgeräusch, transkribiert von Whisper. 270 aufgezeichnete Läufe zeigen, dass Texttests nur 1 von 20 echten Fehlern finden, und eine Budget-Simulation zeigt, wann günstiges Vorfiltern sich lohnt.",
+    },
+    descriptions: {
+      en: "A prototype of the question behind automotive voice-assistant testing: how much realism does a test need, and how should a limited test budget be spent?\n\nSystem: an LLM on NVIDIA NIM controls a mock car through three tools (temperature, navigation, volume) in a tool-calling loop. 30 test commands each define the car state expected afterwards: normal values, boundaries, refusals, off-topic questions and two requests in one sentence.\n\nThree levels: level 0 sends the clean text. Level 1 applies rule-based speech-recognition errors (\"to\" → \"two\", digits as words). Level 2 synthesises the command as speech, mixes in cabin noise with ffmpeg and lets faster-whisper transcribe it. Every test ran 3 times per level; all 270 outcomes are stored. Pass rates fall from 97 % to 81 % to 47 %.\n\nFindings: the levels find different bugs. Level 1 raised false alarms that real audio did not reproduce, and missed errors that only real audio caused: Regensburg heard as \"Raven's place\", Augsburg as \"Oxford\", and \"28 degrees\" heard as \"78\", which the model silently converted from Fahrenheit to 25.6 °C. A budget simulation over the recorded runs compares four strategies: text-only testing finds one bug whatever it spends; when audio tests cost 20× more, screening with simulated errors first finds 2.2× more bugs on a small budget than testing everything with audio.\n\nFix and engineering: three failures shared one root cause, the model choosing a value instead of calling the tool. One system-prompt rule took level 0 from 86/90 to 90/90 and turned the silent Fahrenheit conversion into a visible refusal. 21 offline tests, including the tool loop with a scripted fake LLM, run in GitHub Actions.",
+      tr: "Araç içi sesli asistan testinin arkasındaki sorunun bir prototipi: bir test ne kadar gerçekçi olmalı ve sınırlı bir test bütçesi nasıl harcanmalı?\n\nSistem: NVIDIA NIM üzerindeki bir LLM, tool-calling döngüsüyle üç araç (sıcaklık, navigasyon, ses) üzerinden sahte bir arabayı kontrol ediyor. 30 test komutunun her biri, sonrasında beklenen araba durumunu tanımlıyor: normal değerler, sınırlar, reddedilmesi gerekenler, konu dışı sorular ve tek cümlede iki istek.\n\nÜç seviye: Level 0 temiz metni gönderiyor. Level 1 kurala dayalı ses tanıma hataları ekliyor (\"to\" → \"two\", rakamlar yazıyla). Level 2 komutu sese çeviriyor, ffmpeg ile araç içi gürültü ekliyor ve faster-whisper ile yazıya döktürüyor. Her test her seviyede 3 kez çalıştı, 270 sonucun hepsi kaydedildi. Başarı oranı %97'den %81'e ve %47'ye düşüyor.\n\nBulgular: seviyeler farklı hatalar buluyor. Level 1, gerçek seste tekrarlanmayan sahte alarmlar verdi ve sadece gerçek sesin yol açtığı hataları kaçırdı: Regensburg \"Raven's place\", Augsburg \"Oxford\" diye duyuldu; \"28 derece\" \"78\" olarak duyulunca model bunu sessizce Fahrenhayttan çevirip 25,6 °C yaptı. Kayıtlı sonuçlar üzerinde bir bütçe simülasyonu dört stratejiyi karşılaştırıyor: sadece metinle test etmek ne kadar harcanırsa harcansın tek bir hata buluyor; ses testleri 20 kat pahalıyken önce taklit hatalarla ön eleme yapmak, küçük bir bütçede her şeyi sesle test etmekten 2,2 kat fazla hata buluyor.\n\nDüzeltme ve mühendislik: üç hatanın kök nedeni aynıydı: model aracı çağırmak yerine değeri kendisi seçiyordu. Sistem talimatına eklenen tek bir kural Level 0'ı 86/90'dan 90/90'a çıkardı ve sessiz Fahrenhayt dönüşümünü görünür bir redde çevirdi. Senaryolu sahte bir LLM ile araç döngüsü dahil 21 çevrimdışı test GitHub Actions'ta koşuyor.",
+      de: "Ein Prototyp der Frage hinter dem Testen von Sprachassistenten im Auto: Wie realistisch muss ein Test sein, und wie sollte ein begrenztes Testbudget eingesetzt werden?\n\nSystem: Ein LLM auf NVIDIA NIM steuert in einer Tool-Calling-Schleife ein simuliertes Auto über drei Tools (Temperatur, Navigation, Lautstärke). 30 Testbefehle legen jeweils den erwarteten Fahrzeugzustand fest: normale Werte, Grenzwerte, Ablehnungen, themenfremde Fragen und zwei Wünsche in einem Satz.\n\nDrei Stufen: Stufe 0 sendet den sauberen Text. Stufe 1 fügt regelbasierte Spracherkennungsfehler ein (\"to\" → \"two\", Zahlen als Wörter). Stufe 2 synthetisiert den Befehl als Sprache, mischt mit ffmpeg Innenraumgeräusch hinzu und lässt faster-whisper transkribieren. Jeder Test lief 3-mal pro Stufe; alle 270 Ergebnisse sind gespeichert. Die Erfolgsquote sinkt von 97 % über 81 % auf 47 %.\n\nErgebnisse: Die Stufen finden unterschiedliche Fehler. Stufe 1 meldete Fehlalarme, die echtes Audio nicht reproduzierte, und übersah Fehler, die nur echtes Audio verursachte: Regensburg wurde als \"Raven's place\" gehört, Augsburg als \"Oxford\", und \"28 degrees\" als \"78\", was das Modell stillschweigend von Fahrenheit in 25,6 °C umrechnete. Eine Budget-Simulation über die aufgezeichneten Läufe vergleicht vier Strategien: Reines Texttesten findet einen Fehler, egal wie viel es ausgibt; kosten Audiotests 20-mal mehr, findet Vorfiltern mit simulierten Fehlern bei kleinem Budget 2,2-mal mehr Fehler als alles mit Audio zu testen.\n\nFix und Engineering: Drei Fehler hatten eine gemeinsame Ursache: Das Modell wählte selbst einen Wert, statt das Tool aufzurufen. Eine Regel im System-Prompt hob Stufe 0 von 86/90 auf 90/90 und machte aus der stillen Fahrenheit-Umrechnung eine sichtbare Ablehnung. 21 Offline-Tests, darunter die Tool-Schleife mit einem geskripteten Fake-LLM, laufen in GitHub Actions.",
+    },
+    tech: ["Python", "LLM tool calling", "NVIDIA NIM", "faster-whisper", "ffmpeg", "pytest", "GitHub Actions"],
+    tags: ["LLM Evaluation", "Speech", "Automotive"],
+    role: {
+      en: "Solo · design, implementation and evaluation",
+      tr: "Bireysel · tasarım, geliştirme ve değerlendirme",
+      de: "Einzelarbeit · Design, Umsetzung und Evaluation",
+    },
+    links: { github: "https://github.com/salamon30/car-assistant-eval" },
+    cover: "/projects/car-assistant-eval.svg",
+    media: "/projects/car-assistant-eval/strategies.svg",
+    highlights: [
+      { value: "1 of 20", label: { en: "Real bugs that clean-text tests alone can find", tr: "Sadece metin testlerinin bulabildiği gerçek hata", de: "Echte Fehler, die reine Texttests finden" } },
+      { value: "2.2×", label: { en: "More bugs from screening when audio tests are expensive", tr: "Ses testleri pahalıyken ön elemeyle bulunan fazla hata", de: "Mehr Fehler durch Vorfiltern bei teuren Audiotests" } },
+      { value: "86 → 90", label: { en: "Level 0 passes out of 90, after a one-rule prompt fix", tr: "Tek kurallık talimat düzeltmesiyle 90 üzerinden Level 0", de: "Stufe 0 von 90, nach einer Prompt-Regel" } },
+      { value: "270", label: { en: "Recorded runs across 3 test levels", tr: "3 test seviyesinde kaydedilen çalıştırma", de: "Aufgezeichnete Läufe auf 3 Teststufen" } },
+    ],
+  },
   {
     slug: "medical-ai-paper-qa",
     year: "2026",

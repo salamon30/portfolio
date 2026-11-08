@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useT } from "@/lib/i18n";
 import { PROFILE_AVATAR, TENNIS_PHOTOS } from "@/lib/media";
 import { SOCIALS, socialHref } from "@/lib/socials";
-import NeuralNetworkBg from "@/components/NeuralNetworkBg";
+import FlowField from "@/components/FlowField";
 import HowIWork from "@/components/HowIWork";
 import CountUp from "@/components/CountUp";
 import { PROJECTS } from "@/lib/projects";
@@ -152,8 +152,10 @@ function Hero() {
 function BackgroundDecoration() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* dotted grid with soft mask */}
-      <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black_35%,transparent_75%)]" />
+      {/* particle flow field: streams swirl around the pointer, click scatters them */}
+      <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_85%_75%_at_50%_40%,black_45%,transparent_100%)]">
+        <FlowField />
+      </div>
 
       {/* blob 1 — accent */}
       <motion.div
@@ -177,10 +179,6 @@ function BackgroundDecoration() {
             "radial-gradient(closest-side, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%)",
         }}
       />
-      {/* neural network animation */}
-      <div className="absolute inset-0 opacity-[0.35] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,black_40%,transparent_100%)]">
-        <NeuralNetworkBg />
-      </div>
 
       {/* blob 3 — warm right */}
       <motion.div

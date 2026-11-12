@@ -296,6 +296,7 @@ export const PROJECTS: Project[] = [
       de: "Einzelarbeit · persönliches Projekt, im täglichen aktiven Einsatz",
     },
     cover: "/projects/fin-agent-intelligence.png",
+    media: "/projects/fin-agent-intelligence/demo.gif",
   },
   {
     slug: "sensor-anomaly-detection",

@@ -573,7 +573,7 @@ function Footer() {
           <Link href="/now" className="hover:text-[var(--fg)]">
             {t.nav.now}
           </Link>
-          <span className="text-faint">München</span>
+          <span className="text-faint">Bayern</span>
         </div>
       </div>
     </footer>

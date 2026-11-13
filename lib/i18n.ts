@@ -178,8 +178,8 @@ const en: Dict = {
     ctaCv: "Download CV",
   },
   metrics: {
-    years: "3+",
-    yearsLabel: "Years in data and analytics",
+    years: "15",
+    yearsLabel: "Months of industry data work (Vodafone, KPMG)",
     projects: "2",
     projectsLabel: "Degrees (B.Sc. + M.Eng. in progress)",
     countries: "14",
@@ -239,7 +239,7 @@ const en: Dict = {
         title: "Fin-Agent · Personal Finance Dashboard",
         summary:
           "FastAPI + React finance dashboard with a tool-calling LLM agent. The agent can only propose changes to financial records; a separate confirmation step with no tool behind it performs them. In daily use.",
-        metric: "~15 agent tools · human-in-the-loop writes",
+        metric: "9 agent tools · human-in-the-loop writes",
         href: "/projects/fin-agent-intelligence",
       },
     ],
@@ -513,8 +513,8 @@ const tr: Dict = {
     ctaCv: "CV'yi indir",
   },
   metrics: {
-    years: "3+",
-    yearsLabel: "Veri ve analitikte yıl",
+    years: "15",
+    yearsLabel: "Ay sektör deneyimi, veri alanında (Vodafone, KPMG)",
     projects: "2",
     projectsLabel: "Derece (Lisans + devam eden Y.L.)",
     countries: "14",
@@ -574,7 +574,7 @@ const tr: Dict = {
         title: "Fin-Agent · Kişisel Finans Panosu",
         summary:
           "Tool-calling LLM ajanlı FastAPI + React finans panosu. Ajan finansal kayıtlarda sadece değişiklik önerebiliyor; değişikliği, arkasında hiçbir araç olmayan ayrı bir onay adımı yapıyor. Her gün kullanılıyor.",
-        metric: "~15 ajan aracı · insan onaylı yazma",
+        metric: "9 ajan aracı · insan onaylı yazma",
         href: "/projects/fin-agent-intelligence",
       },
     ],
@@ -848,8 +848,8 @@ const de: Dict = {
     ctaCv: "Lebenslauf herunterladen",
   },
   metrics: {
-    years: "3+",
-    yearsLabel: "Jahre in Daten und Analytics",
+    years: "15",
+    yearsLabel: "Monate Praxiserfahrung mit Daten (Vodafone, KPMG)",
     projects: "2",
     projectsLabel: "Abschlüsse (B.Sc. + M.Eng. laufend)",
     countries: "14",
@@ -909,7 +909,7 @@ const de: Dict = {
         title: "Fin-Agent · Persönliches Finanz-Dashboard",
         summary:
           "FastAPI- + React-Finanz-Dashboard mit einem Tool-Calling-LLM-Agenten. Der Agent kann Änderungen an Finanzdaten nur vorschlagen; ein separater Bestätigungsschritt ohne zugehöriges Tool führt sie aus. Im täglichen Einsatz.",
-        metric: "~15 Agent-Tools · Schreiben nur nach Bestätigung",
+        metric: "9 Agent-Tools · Schreiben nur nach Bestätigung",
         href: "/projects/fin-agent-intelligence",
       },
     ],

@@ -119,7 +119,7 @@ export default function RootLayout({
               },
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Munich",
+                addressRegion: "Bavaria",
                 addressCountry: "DE",
               },
               sameAs: [

@@ -93,7 +93,7 @@ export default async function OG() {
           }}
         >
           <div style={{ display: "flex" }}>Recep Ulaş Uzun</div>
-          <div style={{ display: "flex" }}>Munich, Germany</div>
+          <div style={{ display: "flex" }}>Bavaria, Germany</div>
         </div>
       </div>
     ),

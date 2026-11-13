@@ -15,9 +15,10 @@ const sections = [
   {
     label: "Working on",
     entries: [
-      "M.Eng. thesis — edge AI inference pipeline for embedded sensor nodes",
-      "Low-altitude aerial detection project (YOLOv8 + Fraunhofer IVI collaboration)",
-      "This portfolio",
+      "M.Eng. coursework in AI for Smart Sensors and Actuators at THD Deggendorf",
+      "Evaluating an in-car LLM assistant: how realistic a test needs to be, and how to spend a limited test budget",
+      "A question-answering system over research papers that cites the exact page, tested on a held-out set",
+      "Looking for a Working Student role in AI, computer vision or data",
     ],
   },
   {
@@ -32,11 +33,12 @@ const sections = [
     entries: [
       "ROS 2 — autonomous systems coursework",
       "TensorRT — optimising neural nets for edge deployment",
+      "German — taking a B1 course",
     ],
   },
   {
     label: "Location",
-    entries: ["Bavaria, Germany — Erlangen / Deggendorf"],
+    entries: ["Bavaria, Germany — studying at THD Deggendorf"],
   },
 ];
 
@@ -54,7 +56,7 @@ export default function NowPage() {
           What I&apos;m up to.
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-muted">
-          A snapshot of what is occupying my time right now. Updated manually — last edit June 2026.
+          A snapshot of what is occupying my time right now. Updated manually — last edit November 2026.
         </p>
       </motion.div>
 

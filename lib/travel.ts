@@ -37,9 +37,9 @@ export const COUNTRIES: Country[] = [
     names: { en: "Germany", tr: "Almanya", de: "Deutschland" },
     cities: ["Munich", "Deggendorf"],
     notes: {
-      en: "Current home. Doing my M.Eng. at THD in Deggendorf, living in Munich. Germany taught me that precision isn't perfectionism — it's a systems mindset applied to daily life. Biergarten in summer, excellent trains, and a research culture that takes engineering seriously.",
-      tr: "Şu anki yuvam. Deggendorf'ta THD'de M.Eng. yapıyorum, Münih'te yaşıyorum. Almanya bana hassasiyetin mükemmeliyetçilik olmadığını öğretti — günlük hayata uygulanmış bir sistem düşüncesi. Yazın biergarten, mükemmel trenler ve mühendisliği ciddiye alan bir araştırma kültürü.",
-      de: "Derzeitiges Zuhause. Ich mache meinen M.Eng. an der THD in Deggendorf und lebe in München. Deutschland hat mir beigebracht, dass Präzision keine Perfektionismus ist — es ist eine Systemdenkweise, die auf den Alltag angewendet wird. Biergarten im Sommer, ausgezeichnete Züge und eine Forschungskultur, die Ingenieurswesen ernst nimmt.",
+      en: "Current home. Doing my M.Eng. at THD in Deggendorf, living in Bavaria. Germany taught me that precision isn't perfectionism — it's a systems mindset applied to daily life. Biergarten in summer, excellent trains, and a research culture that takes engineering seriously.",
+      tr: "Şu anki yuvam. Deggendorf'ta THD'de M.Eng. yapıyorum, Bavyera'da yaşıyorum. Almanya bana hassasiyetin mükemmeliyetçilik olmadığını öğretti — günlük hayata uygulanmış bir sistem düşüncesi. Yazın biergarten, mükemmel trenler ve mühendisliği ciddiye alan bir araştırma kültürü.",
+      de: "Derzeitiges Zuhause. Ich mache meinen M.Eng. an der THD in Deggendorf und lebe in Bayern. Deutschland hat mir beigebracht, dass Präzision keine Perfektionismus ist — es ist eine Systemdenkweise, die auf den Alltag angewendet wird. Biergarten im Sommer, ausgezeichnete Züge und eine Forschungskultur, die Ingenieurswesen ernst nimmt.",
     },
     photos: [
       "/travel/germany/IMG_1251.jpeg",
